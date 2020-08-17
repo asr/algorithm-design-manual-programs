@@ -28,6 +28,7 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "random.h"
 
@@ -77,6 +78,8 @@ void
 random_permutation (int a[], int n)
 {
   int i;
+
+  srand (time (0));
 
   for (i = n; i > 1; i--)
     {
