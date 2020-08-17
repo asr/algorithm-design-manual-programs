@@ -48,7 +48,10 @@ swap (int *a, int *b)
 int
 random_int (int low, int high)
 {                               /* lower/upper bounds on numb */
-  int rand ();
+
+  /* ASR (2020-08-17). Is necessary the following line? */
+  /* int rand (); */
+
   int i, j, r;                  /* random number */
 
   i = RAND_MAX / (high - low + 1);
