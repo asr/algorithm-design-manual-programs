@@ -7,6 +7,6 @@
 
 typedef int point[DIMENSION];
 
-double distance(point, point);
+double distance (point, point);
 
 #endif

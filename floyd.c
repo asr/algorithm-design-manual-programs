@@ -33,115 +33,144 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 
 /************************************************************/
 
-#define MAXV        100     /* maximum number of vertices */
-#define MAXDEGREE   50      /* maximum outdegree of a vertex */
+#define MAXV        100         /* maximum number of vertices */
+#define MAXDEGREE   50          /* maximum outdegree of a vertex */
 #define MAXINT      100007
 
-typedef struct {
-    int v;              /* neighboring vertex */
-    int weight;         /* edge weight */
-    bool in;            /* is the edge "in" the solution? */
+typedef struct
+{
+  int v;                        /* neighboring vertex */
+  int weight;                   /* edge weight */
+  bool in;                      /* is the edge "in" the solution? */
 } edge;
 
-typedef struct {
-    edge edges[MAXV+1][MAXDEGREE];  /* adjacency info */
-    int degree[MAXV+1];             /* outdegree of each vertex */
-    int nvertices;                  /* number of vertices in the graph */
-    int nedges;                     /* number of edges in the graph */
+typedef struct
+{
+  edge edges[MAXV + 1][MAXDEGREE];      /* adjacency info */
+  int degree[MAXV + 1];         /* outdegree of each vertex */
+  int nvertices;                /* number of vertices in the graph */
+  int nedges;                   /* number of edges in the graph */
 } graph;
 
 /* [[[ amatrix_cut */
-typedef struct {
-    int weight[MAXV+1][MAXV+1];         /* adjacency/weight info */
-    int nvertices;                  /* number of vertices in the graph */
+typedef struct
+{
+  int weight[MAXV + 1][MAXV + 1];       /* adjacency/weight info */
+  int nvertices;                /* number of vertices in the graph */
 } adjacency_matrix;
 /* ]]] */
 
-void initialize_adjacency_matrix(adjacency_matrix *g) {
-    int i, j;    /* counters */
+void
+initialize_adjacency_matrix (adjacency_matrix * g)
+{
+  int i, j;                     /* counters */
 
-    g->nvertices = 0;
+  g->nvertices = 0;
 
-    for (i = 1; i <= MAXV; i++) {
-        for (j = 1; j <= MAXV; j++) {
-            g->weight[i][j] = MAXINT;
+  for (i = 1; i <= MAXV; i++)
+    {
+      for (j = 1; j <= MAXV; j++)
+        {
+          g->weight[i][j] = MAXINT;
         }
     }
 }
 
-void read_adjacency_matrix(adjacency_matrix *g, bool directed) {
-    int i;              /* counter */
-    int m;              /* number of edges */
-    int x, y, w;        /* placeholder for edge and weight */
+void
+read_adjacency_matrix (adjacency_matrix * g, bool directed)
+{
+  int i;                        /* counter */
+  int m;                        /* number of edges */
+  int x, y, w;                  /* placeholder for edge and weight */
 
-    initialize_adjacency_matrix(g);
+  initialize_adjacency_matrix (g);
 
-    scanf("%d %d\n", &(g->nvertices), &m);
+  scanf ("%d %d\n", &(g->nvertices), &m);
 
-    for (i = 1; i <= m; i++) {
-        scanf("%d %d %d\n", &x, &y, &w);
-        g->weight[x][y] = w;
+  for (i = 1; i <= m; i++)
+    {
+      scanf ("%d %d %d\n", &x, &y, &w);
+      g->weight[x][y] = w;
 
-        if (directed == FALSE) {
-            g->weight[y][x] = w;
+      if (directed == FALSE)
+        {
+          g->weight[y][x] = w;
         }
     }
 }
 
-void print_graph(adjacency_matrix *g) {
-    int i, j;    /* counters */
+void
+print_graph (adjacency_matrix * g)
+{
+  int i, j;                     /* counters */
 
-    for (i = 1; i <= g->nvertices; i++) {
-        printf("%d: ",i);
-        for (j = 1; j <= g->nvertices; j++) {
-            if (g->weight[i][j] < MAXINT) {
-                printf(" %d",j);
+  for (i = 1; i <= g->nvertices; i++)
+    {
+      printf ("%d: ", i);
+      for (j = 1; j <= g->nvertices; j++)
+        {
+          if (g->weight[i][j] < MAXINT)
+            {
+              printf (" %d", j);
             }
         }
-        printf("\n");
+      printf ("\n");
     }
 }
 
-void print_adjacency_matrix(adjacency_matrix *g) {
-    int i, j;    /* counters */
+void
+print_adjacency_matrix (adjacency_matrix * g)
+{
+  int i, j;                     /* counters */
 
-    for (i = 1; i <= g->nvertices; i++) {
-        printf("%3d: ",i);
-        for (j = 1; j <= g->nvertices; j++) {
-            printf(" %3d", g->weight[i][j]);
+  for (i = 1; i <= g->nvertices; i++)
+    {
+      printf ("%3d: ", i);
+      for (j = 1; j <= g->nvertices; j++)
+        {
+          printf (" %3d", g->weight[i][j]);
         }
-        printf("\n");
+      printf ("\n");
     }
 }
 
 /* [[[ floyd_cut */
-void floyd(adjacency_matrix *g) {
-    int i, j;           /* dimension counters */
-    int k;              /* intermediate vertex counter */
-    int through_k;      /* distance through vertex k */
+void
+floyd (adjacency_matrix * g)
+{
+  int i, j;                     /* dimension counters */
+  int k;                        /* intermediate vertex counter */
+  int through_k;                /* distance through vertex k */
 
-    for (k = 1; k <= g->nvertices; k++) {
-        for (i = 1; i <= g->nvertices; i++) {
-            for (j = 1; j <= g->nvertices; j++) {
-                through_k = g->weight[i][k]+g->weight[k][j];
-                if (through_k < g->weight[i][j]) {
-                    g->weight[i][j] = through_k;
+  for (k = 1; k <= g->nvertices; k++)
+    {
+      for (i = 1; i <= g->nvertices; i++)
+        {
+          for (j = 1; j <= g->nvertices; j++)
+            {
+              through_k = g->weight[i][k] + g->weight[k][j];
+              if (through_k < g->weight[i][j])
+                {
+                  g->weight[i][j] = through_k;
                 }
-                        }
-                }
+            }
+        }
     }
 }
+
 /* ]]] */
 
-int main(void) {
-    adjacency_matrix g;
+int
+main (void)
+{
+  adjacency_matrix g;
 
-    read_adjacency_matrix(&g, FALSE);
-    print_graph(&g);
+  read_adjacency_matrix (&g, FALSE);
+  print_graph (&g);
 
-    floyd(&g);
+  floyd (&g);
 
-    print_adjacency_matrix(&g);
+  print_adjacency_matrix (&g);
 
-    return 0;
+  return 0;
 }

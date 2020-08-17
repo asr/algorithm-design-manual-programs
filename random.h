@@ -25,7 +25,7 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 
 */
 
-void swap(int *a, int *b);
-int random_int(int low, int high);
-void random_permutation(int a[], int n);
-double random_float(int low, int high);
+void swap (int *a, int *b);
+int random_int (int low, int high);
+void random_permutation (int a[], int n);
+double random_float (int low, int high);

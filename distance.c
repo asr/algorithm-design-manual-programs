@@ -28,22 +28,27 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 
 #include "distance.h"
 
-double distance(point a, point b) {
-    int i;
-    double d = 0.0;
+double
+distance (point a, point b)
+{
+  int i;
+  double d = 0.0;
 
-    for (i = 0; i < DIMENSION; i++) {
-        d = d + (a[i] - b[i]) * (a[i] - b[i]);
+  for (i = 0; i < DIMENSION; i++)
+    {
+      d = d + (a[i] - b[i]) * (a[i] - b[i]);
     }
 
-    return(sqrt(d));
+  return (sqrt (d));
 }
 
-int main(void) {
-    point a = {6, 2, 3};
-    point b = {6, 3, 4};
+int
+main (void)
+{
+  point a = { 6, 2, 3 };
+  point b = { 6, 3, 4 };
 
-    printf("distance = %f\n", distance(a, b));
+  printf ("distance = %f\n", distance (a, b));
 
-    return 0;
+  return 0;
 }

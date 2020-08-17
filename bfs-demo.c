@@ -31,46 +31,59 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 #include "bfs-dfs.h"
 #include "bool.h"
 
-extern bool processed[];    /* which vertices have been processed */
-extern bool discovered[];   /* which vertices have been found */
-extern int parent[];        /* discovery relation */
+extern bool processed[];        /* which vertices have been processed */
+extern bool discovered[];       /* which vertices have been found */
+extern int parent[];            /* discovery relation */
 
 /* [[[ pvearly_cut */
-void process_vertex_early(int v) {
-    printf("processed vertex %d\n", v);
+void
+process_vertex_early (int v)
+{
+  printf ("processed vertex %d\n", v);
 }
+
 /* ]]] */
 
 /* [[[ pvlate_cut */
-void process_vertex_late(int v) {
+void
+process_vertex_late (int v)
+{
 
 }
+
 /* ]]] */
 
 /* [[[ pedge_cut */
-void process_edge(int x, int y) {
-    printf("processed edge (%d,%d)\n", x, y);
+void
+process_edge (int x, int y)
+{
+  printf ("processed edge (%d,%d)\n", x, y);
 }
+
 /* ]]] */
 
-int main(void) {
-    graph g;
-    int i;
+int
+main (void)
+{
+  graph g;
+  int i;
 
-    read_graph(&g, FALSE);
-    print_graph(&g);
-    initialize_search(&g);
-    bfs(&g, 1);
+  read_graph (&g, FALSE);
+  print_graph (&g);
+  initialize_search (&g);
+  bfs (&g, 1);
 
-    for (i = 1; i <= g.nvertices; i++) {
-        printf(" %d", parent[i]);
+  for (i = 1; i <= g.nvertices; i++)
+    {
+      printf (" %d", parent[i]);
     }
-    printf("\n");
+  printf ("\n");
 
-    for (i = 1; i <= g.nvertices; i++) {
-        find_path(1, i, parent);
+  for (i = 1; i <= g.nvertices; i++)
+    {
+      find_path (1, i, parent);
     }
-    printf("\n");
+  printf ("\n");
 
-    return 0;
+  return 0;
 }

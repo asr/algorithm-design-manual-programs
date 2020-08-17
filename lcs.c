@@ -32,90 +32,120 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 #include "editdistance.h"
 #include "bool.h"
 
-cell m[MAXLEN+1][MAXLEN+1];    /* dynamic programming table */
+cell m[MAXLEN + 1][MAXLEN + 1]; /* dynamic programming table */
 
 /******************************************************************/
 
 /*      For normal edit distance computation  */
 
 /* [[[ goal_cell_ed_cut */
-void goal_cell(char *s, char *t, int *i, int *j) {
-    *i = strlen(s) - 1;
-    *j = strlen(t) - 1;
+void
+goal_cell (char *s, char *t, int *i, int *j)
+{
+  *i = strlen (s) - 1;
+  *j = strlen (t) - 1;
 }
+
 /* ]]] */
 
 /* [[[ match_ed_cut */
-int match(char c, char d) {
-    if (c == d) {
-        return(0);
+int
+match (char c, char d)
+{
+  if (c == d)
+    {
+      return (0);
     }
-    return(MAXLEN);
+  return (MAXLEN);
 }
+
 /* ]]] */
 
-int indel(char c) {
-    return(1);
+int
+indel (char c)
+{
+  return (1);
 }
 
 /* [[[ row_init_ed_cut */
-void row_init(int i, cell m[MAXLEN+1][MAXLEN+1]) {
-    m[0][i].cost = i;
-    if (i > 0) {
-        m[0][i].parent =  INSERT;
-    } else {
-        m[0][i].parent = -1;
+void
+row_init (int i, cell m[MAXLEN + 1][MAXLEN + 1])
+{
+  m[0][i].cost = i;
+  if (i > 0)
+    {
+      m[0][i].parent = INSERT;
+    }
+  else
+    {
+      m[0][i].parent = -1;
     }
 }
+
 /* ]]] */
 
-void column_init(int i, cell m[MAXLEN+1][MAXLEN+1]) {
-    m[i][0].cost = i;
-    if (i > 0) {
-        m[i][0].parent = DELETE;
-    } else {
-        m[0][i].parent = -1;
+void
+column_init (int i, cell m[MAXLEN + 1][MAXLEN + 1])
+{
+  m[i][0].cost = i;
+  if (i > 0)
+    {
+      m[i][0].parent = DELETE;
+    }
+  else
+    {
+      m[0][i].parent = -1;
     }
 }
 
 /**********************************************************************/
 /* [[[ mid_out_ed_cut */
-void match_out(char *s, char *t, int i, int j) {
-    if (s[i] == t[j]) {
-        printf("%c", s[i]);
+void
+match_out (char *s, char *t, int i, int j)
+{
+  if (s[i] == t[j])
+    {
+      printf ("%c", s[i]);
     }
 }
+
 /* ]]] */
 
-void insert_out(char *t, int j) {
+void
+insert_out (char *t, int j)
+{
 
 }
 
-void delete_out(char *s, int i) {
+void
+delete_out (char *s, int i)
+{
 
 }
 
 /**********************************************************************/
 
-int main(void) {
-    int i, j;
-    int lcslen, complen;
-    char s[MAXLEN],t[MAXLEN];    /* input strings */
+int
+main (void)
+{
+  int i, j;
+  int lcslen, complen;
+  char s[MAXLEN], t[MAXLEN];    /* input strings */
 
-    s[0] = t[0] = ' ';
+  s[0] = t[0] = ' ';
 
-    scanf("%s", &(s[1]));
-    scanf("%s", &(t[1]));
+  scanf ("%s", &(s[1]));
+  scanf ("%s", &(t[1]));
 
-    complen = string_compare(s, t, m);
-    lcslen = (strlen(s) + strlen(t) - 2 - complen) / 2;
+  complen = string_compare (s, t, m);
+  lcslen = (strlen (s) + strlen (t) - 2 - complen) / 2;
 
-    printf("length of longest common subsequence = %d\n", lcslen);
+  printf ("length of longest common subsequence = %d\n", lcslen);
 
-    goal_cell(s, t, &i, &j);
+  goal_cell (s, t, &i, &j);
 
-    reconstruct_path(s, t, i, j, m);
-    printf("\n");
+  reconstruct_path (s, t, i, j, m);
+  printf ("\n");
 
-    return 0;
+  return 0;
 }

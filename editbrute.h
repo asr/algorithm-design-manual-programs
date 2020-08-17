@@ -31,11 +31,12 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 #define INSERT          1       /* enumerated type symbol for insert */
 #define DELETE          2       /* enumerated type symbol for delete */
 
-typedef struct {
-    int cost;           /* cost of reaching this cell */
-    int parent;         /* parent cell */
+typedef struct
+{
+  int cost;                     /* cost of reaching this cell */
+  int parent;                   /* parent cell */
 } cell;
 
-int string_compare(char *s, char *t, int i, int j);
-void reconstruct_path(char *s, char *t, int i, int j);
-void print_matrix(char *s, char *t, bool costQ);
+int string_compare (char *s, char *t, int i, int j);
+void reconstruct_path (char *s, char *t, int i, int j);
+void print_matrix (char *s, char *t, bool costQ);

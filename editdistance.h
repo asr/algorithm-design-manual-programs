@@ -35,21 +35,25 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 /* ]]] */
 
 /* [[[ editdistance_cell_struct_cut */
-typedef struct {
-    int cost;               /* cost of reaching this cell */
-    int parent;             /* parent cell */
+typedef struct
+{
+  int cost;                     /* cost of reaching this cell */
+  int parent;                   /* parent cell */
 } cell;
 /* ]]] */
 
-void row_init(int i, cell m[MAXLEN+1][MAXLEN+1]);
-void column_init(int i, cell m[MAXLEN+1][MAXLEN+1]);
-int match(char c, char d);
-int indel(char c);
-void goal_cell(char *s, char *t, int *i, int *j);
-void delete_out(char *s, int i);
-void insert_out(char *t, int j);
-void match_out(char *s, char *t, int i, int j);
-int string_compare(char *s, char *t, cell m[MAXLEN+1][MAXLEN+1]);
-int string_compare2(char *s, char *t, int i, int j, cell m[MAXLEN+1][MAXLEN+1]);
-void reconstruct_path(char *s, char *t, int i, int j, cell m[MAXLEN+1][MAXLEN+1]);
-void print_matrix(char *s, char *t, bool costQ, cell m[MAXLEN+1][MAXLEN+1]);
+void row_init (int i, cell m[MAXLEN + 1][MAXLEN + 1]);
+void column_init (int i, cell m[MAXLEN + 1][MAXLEN + 1]);
+int match (char c, char d);
+int indel (char c);
+void goal_cell (char *s, char *t, int *i, int *j);
+void delete_out (char *s, int i);
+void insert_out (char *t, int j);
+void match_out (char *s, char *t, int i, int j);
+int string_compare (char *s, char *t, cell m[MAXLEN + 1][MAXLEN + 1]);
+int string_compare2 (char *s, char *t, int i, int j,
+                     cell m[MAXLEN + 1][MAXLEN + 1]);
+void reconstruct_path (char *s, char *t, int i, int j,
+                       cell m[MAXLEN + 1][MAXLEN + 1]);
+void print_matrix (char *s, char *t, bool costQ,
+                   cell m[MAXLEN + 1][MAXLEN + 1]);

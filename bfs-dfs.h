@@ -27,10 +27,10 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 
 #include "graph.h"
 
-void initialize_search(graph *g);
-void bfs(graph *g, int start);
-int edge_classification(int x, int y);
-void dfs(graph *g, int v);
-void find_path(int start, int end, int parents[]);
+void initialize_search (graph * g);
+void bfs (graph * g, int start);
+int edge_classification (int x, int y);
+void dfs (graph * g, int v);
+void find_path (int start, int end, int parents[]);
 
 #endif

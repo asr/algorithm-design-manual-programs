@@ -215,9 +215,17 @@ backup:	$(SOURCES) $(INCLUDES)
 fix-whitespace :
 	fix-whitespace
 
-clean:
-	rm -f core *.o a.out $(BINARIES)
+indent :
+	indent --gnu-style --no-tabs *.c *.h
+
+clean :
 	rm -f ./tests/*.o
+	rm -f *.o
+	rm -f *.c~
+	rm -f *.h~
+	rm -f core
+	rm -f a.out
+	rm -f $(BINARIES)
 
 tar:
 	make clean

@@ -30,14 +30,15 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 #define SET_SIZE 1000
 
 /* [[[ set_union_cut */
-typedef struct {
-    int p[SET_SIZE+1];      /* parent element */
-    int size[SET_SIZE+1];   /* number of elements in subtree i */
-    int n;                  /* number of elements in set */
+typedef struct
+{
+  int p[SET_SIZE + 1];          /* parent element */
+  int size[SET_SIZE + 1];       /* number of elements in subtree i */
+  int n;                        /* number of elements in set */
 } set_union;
 /* ]]] */
 
-void set_union_init(set_union *s, int n);
-void union_sets(set_union *s, int s1, int s2);
-bool same_component(set_union *s, int s1, int s2);
-void print_set_union(set_union *s);
+void set_union_init (set_union * s, int n);
+void union_sets (set_union * s, int s1, int s2);
+bool same_component (set_union * s, int s1, int s2);
+void print_set_union (set_union * s);
