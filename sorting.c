@@ -251,7 +251,6 @@ merge (item_type s[], int low, int middle, int high)
 void
 mergesort_ (item_type s[], int low, int high)
 {
-  int i;                        /* counter */
   int middle;                   /* index of middle element */
 
   if (low < high)
@@ -270,8 +269,7 @@ int
 main (void)
 {
   int s[NELEM + 2];
-  int n;
-  int i, j;                     /* counters */
+  int i;                        /* counters */
 
   for (i = 0; i < NELEM; i++)
     {

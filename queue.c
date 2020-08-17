@@ -92,7 +92,7 @@ empty_queue (queue * q)
 void
 print_queue (queue * q)
 {
-  int i, j;
+  int i;
 
   i = q->first;
 
