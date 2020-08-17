@@ -98,3 +98,26 @@ brief description of what they are:
 
 `wgraph.c`     a generic weighted graph data type\
 `wgraph.h`     header file for weighted graph type
+
+## CM0889
+
+* You can clone this *branch* by running
+
+    ```bash
+    $ git clone https://github.com/asr/skiena-tadm.git
+    $ cd skiena-tadm
+    $ git checkout --track origin/cm0889
+    ```
+
+* You can use
+[these](https://solarianprogrammer.com/2016/10/07/building-gcc-ubuntu-linux/)
+instructions for installing a recent version of GCC on Ubuntu.
+
+* The *tested* C files were compiled using the following `.gitignored`
+  file:
+
+    ```bash
+    $ cat config.mk
+    CC_AUX     := gcc-10.2.0
+    CFLAGS_AUX := -Wall -Wextra -Werror
+    ```
