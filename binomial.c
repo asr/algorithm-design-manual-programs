@@ -1,12 +1,12 @@
-/*	binomial.c
-	Compute the binomial coefficients using dynamic programming 
+/*      binomial.c
+        Compute the binomial coefficients using dynamic programming
 
-	begun: February 10, 2002
-	by: Steven Skiena
+        begun: February 10, 2002
+        by: Steven Skiena
 */
 #include <stdio.h>
 
-#define	MAXN    100    /* largest n or m */
+#define MAXN    100    /* largest n or m */
 
 /* computer n choose m */
 
@@ -39,7 +39,7 @@ int main(void) {
     while (1) {
         scanf("%d %d", &a, &b);
         printf("%d\n", binomial_coefficient(a, b));
-	}
+        }
 
     return 0;
 }

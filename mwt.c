@@ -1,13 +1,13 @@
-/*	mwt.c
+/*      mwt.c
 
-	Compute the minimum weight triangulation of convex polygons
+        Compute the minimum weight triangulation of convex polygons
 
-	begun: August 15, 2006
-	by: Steven Skiena
+        begun: August 15, 2006
+        by: Steven Skiena
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.

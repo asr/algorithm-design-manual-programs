@@ -8,7 +8,7 @@
 
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -117,7 +117,7 @@ void copy_solution(tsp_solution *s, tsp_solution *t) {
         t->p[i] = s->p[i];
     }
 }
-    
+
 
 void print_solution(tsp_solution *s) {
     int i;    /* counter */
@@ -147,7 +147,7 @@ double transition(tsp_solution *s, tsp_instance *t, int i, int j) {
     double distance();
     bool neighbors;        /* i,j neighboring tour positions? */
 
-    neighbors = FALSE; 
+    neighbors = FALSE;
 
     if (i == j) {
         return(0.0);

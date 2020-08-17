@@ -1,14 +1,14 @@
-/*	editdistance.c
+/*      editdistance.c
 
-	A generic implementation of string comparison via dynamic programming
+        A generic implementation of string comparison via dynamic programming
 
-	by:Steven Skiena
-	begun: March 26, 2002
+        by:Steven Skiena
+        begun: March 26, 2002
 */
 
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -35,7 +35,7 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 /* [[[ editdistance_str_compare_cut */
 int string_compare(char *s, char *t, cell m[MAXLEN+1][MAXLEN+1]) {
     int i, j, k;    /* counters */
-    int opt[3];	    /* cost of the three options */
+    int opt[3];     /* cost of the three options */
 
     for (i = 0; i <= MAXLEN; i++) {
         row_init(i, m);
@@ -92,7 +92,7 @@ void reconstruct_path(char *s, char *t, int i, int j, cell m[MAXLEN+1][MAXLEN+1]
 
 void print_matrix(char *s, char *t, bool costQ, cell m[MAXLEN+1][MAXLEN+1]) {
     int i, j;           /* counters */
-	int x,y;            /* string lengths */
+        int x,y;            /* string lengths */
 
     x = strlen(s);
     y = strlen(t);

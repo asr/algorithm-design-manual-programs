@@ -8,7 +8,7 @@
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -110,8 +110,8 @@ double area_triangulation(polygon *p) {
 
     triangulate(p, &t);
     for (i = 0; i < t.n; i++) {
-        total += triangle_area(p->p[t.t[i][0]], 
-        	                   p->p[t.t[i][1]], p->p[t.t[i][2]]);
+        total += triangle_area(p->p[t.t[i][0]],
+                                   p->p[t.t[i][1]], p->p[t.t[i][2]]);
     }
 
     return(total);
@@ -136,7 +136,7 @@ int main(void) {
     double area(), area_triangulate();
 
     scanf("%d", &p.n);
-    for (i = 0; i < p.n; i++) { 
+    for (i = 0; i < p.n; i++) {
         scanf("%lf %lf", &p.p[i][X], &p.p[i][Y]);
     }
 

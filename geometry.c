@@ -1,14 +1,14 @@
 
-/*	geometry.c
+/*      geometry.c
 
-	Basic geometric primitives and data types -- Lines, Circles, Segments
+        Basic geometric primitives and data types -- Lines, Circles, Segments
 
-	by: Steven Skiena
-	begun: April 12, 2002
+        by: Steven Skiena
+        begun: April 12, 2002
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -36,7 +36,7 @@ void points_to_line(point p1, point p2, line *l) {
         l->b = 0;
         l->c = -p1[X];
     } else {
-	    l->b = 1;
+            l->b = 1;
         l->a = -(p1[Y]-p2[Y])/(p1[X]-p2[X]);
         l->c = -(l->a * p1[X]) - (l->b * p1[Y]);
     }
@@ -72,7 +72,7 @@ void intersection_point(line l1, line l2, point p) {
     p[X] = (l2.b*l1.c - l1.b*l2.c) / (l2.a*l1.b - l1.a*l2.b);
 
     if (fabs(l1.b) > EPSILON) { /* test for vertical line */
-		p[Y] = - (l1.a * (p[X]) + l1.c) / l1.b;
+                p[Y] = - (l1.a * (p[X]) + l1.c) / l1.b;
     } else {
         p[Y] = - (l2.a * (p[X]) + l2.c) / l2.b;
     }
@@ -149,7 +149,7 @@ bool segments_intersect(segment s1, segment s2) {
     points_to_line(s1.p1, s1.p2, &l1);
     points_to_line(s2.p1, s2.p2, &l2);
 
-    if (same_lineQ(l1, l2)) {	/* overlapping or disjoint segments */
+    if (same_lineQ(l1, l2)) {   /* overlapping or disjoint segments */
         return(point_in_box(s1.p1,s2.p1,s2.p2) ||
                point_in_box(s1.p2,s2.p1,s2.p2) ||
                point_in_box(s2.p1,s1.p1,s1.p2) ||
@@ -166,7 +166,7 @@ bool segments_intersect(segment s1, segment s2) {
 }
 
 double signed_triangle_area(point a, point b, point c) {
-    return((a[X]*b[Y] - a[Y]*b[X] + a[Y]*c[X] 
+    return((a[X]*b[Y] - a[Y]*b[X] + a[Y]*c[X]
           - a[X]*c[Y] + b[X]*c[Y] - c[X]*b[Y]) / 2.0);
 }
 

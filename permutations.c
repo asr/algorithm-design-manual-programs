@@ -7,7 +7,7 @@
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -74,7 +74,7 @@ void construct_candidates(int a[], int k, int n, int c[], int *ncandidates) {
     }
 
     *ncandidates = 0;
-    for (i = 1; i <= n; i++) { 
+    for (i = 1; i <= n; i++) {
         if (in_perm[i] == FALSE) {
             c[ *ncandidates] = i;
             *ncandidates = *ncandidates + 1;

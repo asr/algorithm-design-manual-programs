@@ -1,14 +1,14 @@
 
-/*	dijkstra.c
+/*      dijkstra.c
 
-	Compute shortest paths in weighted graphs using Dijkstra's algorithm
+        Compute shortest paths in weighted graphs using Dijkstra's algorithm
 
-	by: Steven Skiena
-	date: March 6, 2002
+        by: Steven Skiena
+        date: March 6, 2002
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -46,7 +46,7 @@ void dijkstra(graph *g, int start) {
     int distance[MAXV+1];   /* distance vertex is from start */
     int v;                  /* current vertex to process */
     int w;                  /* candidate next vertex */
-    int weight;	            /* edge weight */
+    int weight;             /* edge weight */
     int dist;               /* best current distance from start */
 
     for (i = 1; i <= g->nvertices; i++) {

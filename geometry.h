@@ -1,11 +1,11 @@
-/*	geometry.h
-	Header file for geometric data types
+/*      geometry.h
+        Header file for geometric data types
 
-	by: Steven Skiena
+        by: Steven Skiena
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -25,7 +25,7 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 
 #include "bool.h"
 
-#define	PI      3.1415926   /* ratio of circumference to diameter */
+#define PI      3.1415926   /* ratio of circumference to diameter */
 #define EPSILON 0.000001    /* a quantity small enough to be zero */
 
 typedef struct {
@@ -36,7 +36,7 @@ typedef struct {
 
 #define DIMENSION  2  /* dimension of points */
 #define X          0  /* x-coordinate index */
-#define	Y          1  /* y-coordinate index */
+#define Y          1  /* y-coordinate index */
 
 typedef double point[DIMENSION];
 
@@ -63,10 +63,10 @@ typedef struct {
     double r;       /* radius of circle */
 } circle;
 
-/*	Comparison macros  */
+/*      Comparison macros  */
 
-#define	max(A, B)		((A) > (B) ? (A) : (B))
-#define min(A, B)		((A) < (B) ? (A) : (B))
+#define max(A, B)               ((A) > (B) ? (A) : (B))
+#define min(A, B)               ((A) < (B) ? (A) : (B))
 
 void points_to_line(point p1, point p2, line *l);
 void point_and_slope_to_line(point p, double m, line *l);

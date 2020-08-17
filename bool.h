@@ -1,5 +1,5 @@
-/*	bool.h
-	Simple boolean datatype
+/*      bool.h
+        Simple boolean datatype
 */
 
 #define TRUE    1

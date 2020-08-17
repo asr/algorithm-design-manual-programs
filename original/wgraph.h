@@ -1,13 +1,13 @@
 
-/*	wgraph.h
+/*      wgraph.h
 
-	Header file for weighted graph type
+        Header file for weighted graph type
 
-	by Steven Skiena
+        by Steven Skiena
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -25,19 +25,18 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 
 */
 
-#define	MAXV		100		/* maximum number of vertices */
-#define MAXDEGREE	50		/* maximum outdegree of a vertex */
+#define MAXV            100             /* maximum number of vertices */
+#define MAXDEGREE       50              /* maximum outdegree of a vertex */
 
 typedef struct {
-	int v;				/* neighboring vertex */
-	int weight;			/* edge weight */
+        int v;                          /* neighboring vertex */
+        int weight;                     /* edge weight */
 } edge;
 
 typedef struct {
-	edge edges[MAXV+1][MAXDEGREE];	/* adjacency info */
-	int degree[MAXV+1];		/* outdegree of each vertex */
-	int nvertices;			/* number of vertices in the graph */
-	int nedges;			/* number of edges in the graph */
+        edge edges[MAXV+1][MAXDEGREE];  /* adjacency info */
+        int degree[MAXV+1];             /* outdegree of each vertex */
+        int nvertices;                  /* number of vertices in the graph */
+        int nedges;                     /* number of edges in the graph */
 } graph;
-
 

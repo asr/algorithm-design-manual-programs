@@ -1,5 +1,5 @@
 /*  partition.c
-    Optimally balance partitions using dynamic programming 
+    Optimally balance partitions using dynamic programming
 
     begun: August 14, 2006
     by: Steven Skiena
@@ -13,7 +13,7 @@
 
 int max(int a, int b) {
     return((a > b) ? a : b);
-} 
+}
 
 void read_partition(int s[], int *n, int *k) {
     int i;    /* counter */
@@ -41,7 +41,7 @@ void print_matrix(int m[MAXN+1][MAXK+1], int n, int k) {
 
     printf("\n");
     for (i = 1; i <=n; i++) {
-        for (j = 1; j <= k; j++) { 
+        for (j = 1; j <= k; j++) {
             printf(" %d ", m[i][j]);
         }
         printf("\n");
@@ -91,7 +91,7 @@ void partition(int s[], int n, int k) {
                 }
             }
         }
-    }  
+    }
     reconstruct_partition(s, d, n, k);    /* print book partition */
 }
 /* ]]] */

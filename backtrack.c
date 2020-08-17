@@ -1,13 +1,13 @@
-/*	
-	backtrack.c
-    	A generic backtracking implementation
+/*
+        backtrack.c
+        A generic backtracking implementation
 
-	begun: March 27, 2002
+        begun: March 27, 2002
         by: Steven Skiena
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -58,7 +58,7 @@ void backtrack(int a[], int k, data input) {
             unmake_move(a, k, input);
 
             if (finished == TRUE) {
-                return;	/* terminate early */
+                return; /* terminate early */
             }
         }
     }

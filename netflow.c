@@ -10,7 +10,7 @@
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -265,7 +265,7 @@ void augment_path(flow_graph *g, int start, int end, int parents[], int volume) 
     e = find_edge(g, parents[end], end);
     e->flow += volume;
     e->residual -= volume;
-    
+
     e = find_edge(g, end, parents[end]);
     e->residual += volume;
 

@@ -1,14 +1,14 @@
-/*	binomial.c
-	Compute the binomial coefficients using dynamic programming 
+/*      binomial.c
+        Compute the binomial coefficients using dynamic programming
 
-	begun: February 10, 2002
-	by: Steven Skiena
+        begun: February 10, 2002
+        by: Steven Skiena
 */
 #include <stdio.h>
 
 /* [[[ fib_const_cut */
-#define	MAXN    45      /* largest n or m */
-#define UNKNOWN	-1      /* contents denote an empty cell */
+#define MAXN    45      /* largest n or m */
+#define UNKNOWN -1      /* contents denote an empty cell */
 long f[MAXN+1];         /* array for caching computed fib values */
 /* ]]] */
 
@@ -51,7 +51,7 @@ long fib_r(int n) {
 
 /* [[[ fib_c_cut */
 long fib_c(int n) {
-    if (f[n] == UNKNOWN) { 
+    if (f[n] == UNKNOWN) {
         f[n] = fib_c(n-1) + fib_c(n-2);
     }
 
@@ -65,7 +65,7 @@ long fib_c_driver(int n) {
 
     f[0] = 0;
     f[1] = 1;
-	
+
     for (i = 2; i <= n; i++) {
         f[i] = UNKNOWN;
     }
@@ -103,7 +103,7 @@ long fib_dp2(int n) {
         next = back1 + back2;
         back2 = back1;
         back1 = next;
-	}
+        }
 
     return(back1 + back2);
 }

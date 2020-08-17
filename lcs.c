@@ -1,14 +1,14 @@
-/*	lcs.c
+/*      lcs.c
 
-	Longest common subsequence of two strings.
+        Longest common subsequence of two strings.
 
-	by: Steven Skiena
-	begun: March 26, 2002
+        by: Steven Skiena
+        begun: March 26, 2002
 */
 
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -36,7 +36,7 @@ cell m[MAXLEN+1][MAXLEN+1];    /* dynamic programming table */
 
 /******************************************************************/
 
-/*	For normal edit distance computation  */
+/*      For normal edit distance computation  */
 
 /* [[[ goal_cell_ed_cut */
 void goal_cell(char *s, char *t, int *i, int *j) {

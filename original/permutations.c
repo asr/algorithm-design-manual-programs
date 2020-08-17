@@ -1,13 +1,13 @@
-/*	permutations.c
+/*      permutations.c
 
-	Construct all permutations via backtracking.
+        Construct all permutations via backtracking.
 
-	by: Steven Skiena
-	begun: March 27, 2002
+        by: Steven Skiena
+        begun: March 27, 2002
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -32,16 +32,16 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 
 process_solution(int a[], int k)
 {
-	int i;				/* counter */
+        int i;                          /* counter */
 
-	for (i=1; i<=k; i++) printf(" %d",a[i]);
+        for (i=1; i<=k; i++) printf(" %d",a[i]);
 
-	printf("\n");
+        printf("\n");
 }
 
 is_a_solution(int a[], int k, int n)
 {
-	return (k == n);
+        return (k == n);
 }
 
 make_move(int a[], int k, int n)
@@ -53,33 +53,33 @@ unmake_move(int a[], int k, int n)
 }
 
 
-/*	What are possible elements of the next slot in the permutation?  */
+/*      What are possible elements of the next slot in the permutation?  */
 
 construct_candidates(int a[], int k, int n, int c[], int *ncandidates)
 {
-	int i;				/* counter */
-	bool in_perm[NMAX];		/* what is now in the permutation? */
+        int i;                          /* counter */
+        bool in_perm[NMAX];             /* what is now in the permutation? */
 
-	for (i=1; i<NMAX; i++) in_perm[i] = FALSE;
-	for (i=1; i<k; i++) in_perm[ a[i] ] = TRUE;
+        for (i=1; i<NMAX; i++) in_perm[i] = FALSE;
+        for (i=1; i<k; i++) in_perm[ a[i] ] = TRUE;
 
-	*ncandidates = 0;
-	for (i=1; i<=n; i++) 
-		if (in_perm[i] == FALSE) {
-			c[ *ncandidates] = i;
-			*ncandidates = *ncandidates + 1;
-		}
+        *ncandidates = 0;
+        for (i=1; i<=n; i++)
+                if (in_perm[i] == FALSE) {
+                        c[ *ncandidates] = i;
+                        *ncandidates = *ncandidates + 1;
+                }
 }
 
 
 
 main()
 {
-	int a[NMAX];			/* solution vector */
+        int a[NMAX];                    /* solution vector */
 
-	backtrack(a,0,0);
-	backtrack(a,0,1);
-	backtrack(a,0,2);
-	backtrack(a,0,3);
+        backtrack(a,0,0);
+        backtrack(a,0,1);
+        backtrack(a,0,2);
+        backtrack(a,0,3);
 }
 

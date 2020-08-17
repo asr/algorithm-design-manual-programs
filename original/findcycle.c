@@ -1,14 +1,14 @@
 
-/*	findcycle.c
+/*      findcycle.c
 
-	Identify a cycle in a graph, if one exists.
+        Identify a cycle in a graph, if one exists.
 
-	begun: March 6, 2002
-	by: Steven Skiena
+        begun: March 6, 2002
+        by: Steven Skiena
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -30,11 +30,11 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 #include "bool.h"
 #include "graph.h"
 
-extern bool processed[];	/* which vertices have been processed */
-extern bool discovered[];	/* which vertices have been found */
-extern int parent[];		/* discovery relation */
+extern bool processed[];        /* which vertices have been processed */
+extern bool discovered[];       /* which vertices have been found */
+extern int parent[];            /* discovery relation */
 
-extern bool finished;		/* flag for early search cutoff */
+extern bool finished;           /* flag for early search cutoff */
 
 
 process_vertex_early(int v)
@@ -47,12 +47,12 @@ process_vertex_late(int v)
 
 process_edge(int x, int y)
 {
-	if (parent[x] != y) {	/* found back edge! */
-		printf("Cycle from %d to %d:",y,x);
-		find_path(y,x,parent);
-		printf("\n\n");
-		finished = TRUE;
-	}
+        if (parent[x] != y) {   /* found back edge! */
+                printf("Cycle from %d to %d:",y,x);
+                find_path(y,x,parent);
+                printf("\n\n");
+                finished = TRUE;
+        }
 }
 
 bool valid_edge(int e)
@@ -64,15 +64,13 @@ bool valid_edge(int e)
 
 main()
 {
-	graph g;
-	int i;
+        graph g;
+        int i;
 
-	read_graph(&g,FALSE);
-	print_graph(&g);
+        read_graph(&g,FALSE);
+        print_graph(&g);
 
-	initialize_search(&g);
-	dfs(&g,1);
+        initialize_search(&g);
+        dfs(&g,1);
 }
-
-
 

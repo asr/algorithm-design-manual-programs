@@ -1,10 +1,10 @@
-/*	Steven Skiena
-	8/7/06
-	Simulated Annealing Implementation
+/*      Steven Skiena
+        8/7/06
+        Simulated Annealing Implementation
 
-	These routines provide a fairly generic implementation of
-	simulated annealing, starting from my older code to optimize
-	selective assembly.
+        These routines provide a fairly generic implementation of
+        simulated annealing, starting from my older code to optimize
+        selective assembly.
 
 */
 #include <stdio.h>
@@ -107,13 +107,13 @@ void repeated_hill_climbing(tsp_instance *t, int nsamples, tsp_solution *bestsol
     }
 }
 
-/*	These routines implement simulated annealing.  Pairs of components
-	of the same type will be swapped at random, and the new arrangment
-	accepted either if (1) it is an improvement, or (2) the penalty is
-	less than a random number, which is a function of the temperature
-	of the system.
+/*      These routines implement simulated annealing.  Pairs of components
+        of the same type will be swapped at random, and the new arrangment
+        accepted either if (1) it is an improvement, or (2) the penalty is
+        less than a random number, which is a function of the temperature
+        of the system.
 
-	We are seeking to *minimize* the current_value.
+        We are seeking to *minimize* the current_value.
 */
 
 /* [[[ anneal_cut */
@@ -135,7 +135,7 @@ void anneal(tsp_instance *t, tsp_solution *s) {
     for (i = 1; i <= COOLING_STEPS; i++) {
         temperature *= COOLING_FRACTION;
 
-        start_value = current_value;		
+        start_value = current_value;
 
         for (j = 1; j <= STEPS_PER_TEMP; j++) {
             /* pick indices of elements to swap */
@@ -155,7 +155,7 @@ void anneal(tsp_instance *t, tsp_solution *s) {
                     printf("swap WIN %d--%d value %f  temp=%f i=%d j=%d\n",
                     i1, i2, current_value, temperature, i, j);
                 }
-            } else { 
+            } else {
                 if (merit > flip) {     /*ACCEPT-LOSS*/
                     current_value = current_value + delta;
                     if (TRACE_OUTPUT == TRUE) {
@@ -164,7 +164,7 @@ void anneal(tsp_instance *t, tsp_solution *s) {
                     }
                 } else {                /* REJECT */
                     transition(s, t, i1, i2);
-                } 
+                }
             }
             solution_count_update(s, t);
         }

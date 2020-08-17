@@ -1,14 +1,14 @@
 
-/*	dfs-demo.c
-	Driver program demonstrating depth-first search numbering and
-	edge labeling.
+/*      dfs-demo.c
+        Driver program demonstrating depth-first search numbering and
+        edge labeling.
 
-	by: Steven Skiena
-	begun: March 27, 2002
+        by: Steven Skiena
+        begun: March 27, 2002
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.

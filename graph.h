@@ -1,11 +1,11 @@
-/*	graph.h
-	Header file for pointer-based graph data type
+/*      graph.h
+        Header file for pointer-based graph data type
 
-	by: Steven Skiena
+        by: Steven Skiena
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -25,12 +25,12 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 #include "bool.h"
 
 /* [[[ maxv_cut */
-#define	MAXV        100     /* maximum number of vertices */
+#define MAXV        100     /* maximum number of vertices */
 /* ]]] */
 
 #define _NULL       0       /* null pointer */
 
-/*	DFS edge types		*/
+/*      DFS edge types          */
 
 #define TREE        0       /* tree edge */
 #define BACK        1       /* back edge */

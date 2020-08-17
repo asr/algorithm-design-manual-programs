@@ -1,13 +1,13 @@
-/*	gcd.c           
+/*      gcd.c
 
-	Compute the greatest common divisor of two integers
+        Compute the greatest common divisor of two integers
 
-	by: Steven Skiena
-	begun: July 10, 2002
+        by: Steven Skiena
+        begun: July 10, 2002
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -45,7 +45,7 @@ long gcd1(long p, long q) {
     return(gcd1(q, p % q));
 }
 
-/*	Find the gcd(p,q) and x,y such that p*x + q*y = gcd(p,q)	*/
+/*      Find the gcd(p,q) and x,y such that p*x + q*y = gcd(p,q)        */
 
 long gcd(long p, long q, long *x, long *y) {
     long x1, y1;        /* previous coefficients */
@@ -62,7 +62,7 @@ long gcd(long p, long q, long *x, long *y) {
     }
 
     g = gcd(q, p%q, &x1, &y1);
-	
+
     *x = y1;
     *y = (x1 - floor(p/q)*y1);
 
@@ -83,7 +83,7 @@ int main(void) {
         if (g1 != g2) {
             printf("ERROR: GCD\n");
         }
-        
+
         if ((p*x + q*y) != g1) {
             printf("ERROR: DIOPHONINE SOLUTION WRONG!\n");
         }

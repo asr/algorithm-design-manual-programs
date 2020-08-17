@@ -1,4 +1,4 @@
-/*    
+/*
     paths.c
     Enumerate the paths in a graph via backtracking
 
@@ -7,7 +7,7 @@
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -65,7 +65,7 @@ void unmake_move(int a[], int k, int n) {
 
 }
 
-/*    
+/*
     What are possible elements of the next slot in the path
 */
 /* [[[ construct_candidates_paths_cut */

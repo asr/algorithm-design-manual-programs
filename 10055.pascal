@@ -16,4 +16,4 @@ begin
     writeln(a - b);
   end
 end.
- 
+

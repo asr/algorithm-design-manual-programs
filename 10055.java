@@ -23,12 +23,12 @@ class Main {
       System.out.println(Math.abs(a - b));
     }
   }
- 
+
   static String readLn (int maxLg) {
     byte lin[] = new byte [maxLg];
     int lg = 0, car = -1;
     String line = "";
- 
+
     try {
       while (lg < maxLg) {
         car = System.in.read();
@@ -37,7 +37,7 @@ class Main {
        }
     }
     catch (IOException e) { return (null); }
- 
+
     if ((car < 0) && (lg == 0)) return (null);
     return (new String (lin, 0, lg));
   }

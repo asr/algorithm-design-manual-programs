@@ -1,5 +1,5 @@
 /*    sorting.c
-    Implementations of primary sorting algorithms 
+    Implementations of primary sorting algorithms
 
     by: Steven Skiena
     begun: February 5, 2002
@@ -8,7 +8,7 @@
 
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -103,7 +103,7 @@ int partition(item_type s[], int l, int h) {
 
     p = h;
     firsthigh = l;
-    for (i = l; i < h; i++) { 
+    for (i = l; i < h; i++) {
         if (s[i] < s[p]) {
             swap(&s[i], &s[firsthigh]);
             firsthigh++;
@@ -154,7 +154,7 @@ int binary_search(item_type s[], item_type key, int low, int high) {
     if (s[middle] == key) {
         return(middle);
     }
-    
+
     if (s[middle] > key) {
         return(binary_search(s, key, low, middle - 1));
     } else {

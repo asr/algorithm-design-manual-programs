@@ -8,7 +8,7 @@
 
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -72,7 +72,7 @@ int main(void) {
 
     qsort(suitors, nsuitors, sizeof(suitor), suitor_compare);
 
-    for (i = 0; i < nsuitors; i++) { 
+    for (i = 0; i < nsuitors; i++) {
         printf("%s, %s\n",suitors[i].last, suitors[i].first);
     }
 

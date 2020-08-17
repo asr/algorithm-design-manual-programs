@@ -1,15 +1,15 @@
 
-/*	list-demo.c
+/*      list-demo.c
 
-	Driver for a linked list-based container implementation.
+        Driver for a linked list-based container implementation.
 
-	by: Steven Skiena
-	begun: September 2, 2005
+        by: Steven Skiena
+        begun: September 2, 2005
 */
 
 
 /*
-Copyright 2005 by Steven S. Skiena; all rights reserved. 
+Copyright 2005 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -64,7 +64,7 @@ list *search_list(list *l, item_type x) {
 /* [[[ predecessor_cut */
 list *item_ahead(list *l, list *x) {
     if ((l == NULL) || (l->next == NULL)) {
-		// printf("Error: predecessor sought on null list.\n");
+                // printf("Error: predecessor sought on null list.\n");
         return(NULL);
     }
 
@@ -134,8 +134,8 @@ int main(void) {
         if (tolower(c) == 's') {
             scanf("%d", &d);
             tmp = search_list(l, d);
-            if (tmp == NULL) { 
-				printf("item %d not found\n", d);
+            if (tmp == NULL) {
+                                printf("item %d not found\n", d);
             } else {
                 printf("item %d found\n", d);
             }

@@ -9,7 +9,7 @@
 
 
 /*
-Copyright 2005 by Steven S. Skiena; all rights reserved. 
+Copyright 2005 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -160,7 +160,7 @@ tree *delete_tree(tree *t, item_type x) {
 
         if (d->left != NULL) {    /* find node to physically delete */
             p = predecessor_descendant(d);
-        } else { 
+        } else {
             p = successor_descendant(d);
         }
     } else {
@@ -204,31 +204,31 @@ int main(void) {
     l = init_tree();
 
     while (scanf("%c", &c) != EOF) {
-	    if (tolower(c) == 'p') {
-		    print_tree(l);
-		    printf("\n");
-	    }
-	    if (tolower(c) == 'i') {
-		    scanf("%d", &d);
-		    printf("new item: %d\n", d);
-		    insert_tree(&l, d, NULL);
-	    }
-	    if (tolower(c) == 's') {
-		    scanf("%d", &d);
-		    tmp = search_tree(l, d);
-		    if (tmp == NULL) {
-		        printf("item %d not found\n",d);
-		    } else {
-		        printf("item %d found\n",d);
-		    }
-	    }
-	    if (tolower(c) == 'd') {
-	        scanf("%d", &d);
-	        printf(" deleting item %d\n", d);
-	        l = delete_tree(l, d);
-	        print_tree(l);
-	        printf("\n");
-	    }
+            if (tolower(c) == 'p') {
+                    print_tree(l);
+                    printf("\n");
+            }
+            if (tolower(c) == 'i') {
+                    scanf("%d", &d);
+                    printf("new item: %d\n", d);
+                    insert_tree(&l, d, NULL);
+            }
+            if (tolower(c) == 's') {
+                    scanf("%d", &d);
+                    tmp = search_tree(l, d);
+                    if (tmp == NULL) {
+                        printf("item %d not found\n",d);
+                    } else {
+                        printf("item %d found\n",d);
+                    }
+            }
+            if (tolower(c) == 'd') {
+                scanf("%d", &d);
+                printf(" deleting item %d\n", d);
+                l = delete_tree(l, d);
+                print_tree(l);
+                printf("\n");
+            }
     }
     return 0;
 }

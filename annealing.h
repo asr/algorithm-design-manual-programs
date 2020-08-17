@@ -1,10 +1,10 @@
-/*	Steven Skiena
-	Header for Simulated Annealing Package
+/*      Steven Skiena
+        Header for Simulated Annealing Package
 
-	These are the global variables needed for the system.
-	The parameters which are most likely to be needed to
-	modify in adapting it to another problem are at the top
-	of the file.
+        These are the global variables needed for the system.
+        The parameters which are most likely to be needed to
+        modify in adapting it to another problem are at the top
+        of the file.
 */
 
 #include <math.h>
@@ -19,16 +19,16 @@
 
 /**************** Simulated Annealing Constants **************************/
 
-#define REPEAT_COUNT        1	/* how many solution attempts do you
+#define REPEAT_COUNT        1   /* how many solution attempts do you
                                    want?  More than 1 enables you to
                                    eyeball the output and pick the
                                    best.  If you are getting stuck in
                                    local optima, this good to try. */
 
-#define	INITIAL_TEMPERATURE	1   /* start temperature -- probably
+#define INITIAL_TEMPERATURE     1   /* start temperature -- probably
                                    leave intact */
 
-#define COOLING_STEPS       500	/* how many times do we cool -- make
+#define COOLING_STEPS       500 /* how many times do we cool -- make
                                    higher to improve quality, lower to
                                    speed the program up.  Move in
                                    tandem with the COOLING_FRACTION */
@@ -53,11 +53,11 @@
 
 /*=========================================================================*/
 
-/*  The stuff below is less likely to change in adapting to new 
+/*  The stuff below is less likely to change in adapting to new
     problems, but look for yourself before leaping.
 */
 
 #define ERROR       "ERROR" /* string denoting error id */
-#define ERROR_VALUE	0.0	    /* float denoting error value */
+#define ERROR_VALUE     0.0         /* float denoting error value */
 
 void repeated_annealing(tsp_instance *t, int nsamples, tsp_solution *bestsol);

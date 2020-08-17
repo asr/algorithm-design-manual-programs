@@ -1,15 +1,15 @@
 
-/*	topsort.c
+/*      topsort.c
 
-	Topologically sort a directed acyclic graph (DAG)
+        Topologically sort a directed acyclic graph (DAG)
 
-	by: Steven Skiena
-	begun: March 26, 2002
+        by: Steven Skiena
+        begun: March 26, 2002
 */
 
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -35,58 +35,58 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 
 compute_indegrees(graph *g, int in[])
 {
-	int i,j;			/* counters */
+        int i,j;                        /* counters */
 
-	for (i=1; i<=g->nvertices; i++) in[i] = 0;
+        for (i=1; i<=g->nvertices; i++) in[i] = 0;
 
-	for (i=1; i<=g->nvertices; i++) 
-		for (j=0; j<g->degree[i]; j++) in[ g->edges[i][j] ] ++;
+        for (i=1; i<=g->nvertices; i++)
+                for (j=0; j<g->degree[i]; j++) in[ g->edges[i][j] ] ++;
 }
-		
+
 
 topsort(graph *g, int sorted[])
 {
-	int indegree[MAXV];		/* indegree of each vertex */
-	queue zeroin;			/* vertices of indegree 0 */
-	int x, y;			/* current and next vertex */
-	int i, j;			/* counters */
+        int indegree[MAXV];             /* indegree of each vertex */
+        queue zeroin;                   /* vertices of indegree 0 */
+        int x, y;                       /* current and next vertex */
+        int i, j;                       /* counters */
 
-	compute_indegrees(g,indegree);
-	init_queue(&zeroin);
-	for (i=1; i<=g->nvertices; i++)
-		if (indegree[i] == 0) enqueue(&zeroin,i);
+        compute_indegrees(g,indegree);
+        init_queue(&zeroin);
+        for (i=1; i<=g->nvertices; i++)
+                if (indegree[i] == 0) enqueue(&zeroin,i);
 
-	j=0;
-	while (empty(&zeroin) == FALSE) {
-		j = j+1;
-		x = dequeue(&zeroin);
-		sorted[j] = x;
-		for (i=0; i<g->degree[x]; i++) {
-			y = g->edges[x][i];
-			indegree[y] --;
-			if (indegree[y] == 0) enqueue(&zeroin,y);
-		}
-	}
+        j=0;
+        while (empty(&zeroin) == FALSE) {
+                j = j+1;
+                x = dequeue(&zeroin);
+                sorted[j] = x;
+                for (i=0; i<g->degree[x]; i++) {
+                        y = g->edges[x][i];
+                        indegree[y] --;
+                        if (indegree[y] == 0) enqueue(&zeroin,y);
+                }
+        }
 
-	if (j != g->nvertices)
-		printf("Not a DAG -- only %d vertices found\n",j);
+        if (j != g->nvertices)
+                printf("Not a DAG -- only %d vertices found\n",j);
 }
 
 
 main()
 {
-	graph g;
-	int out[MAXV];
-	int i;
+        graph g;
+        int out[MAXV];
+        int i;
 
-	read_graph(&g,TRUE);
-	print_graph(&g);
+        read_graph(&g,TRUE);
+        print_graph(&g);
 
-	topsort(&g,out);
+        topsort(&g,out);
 
-	for (i=1; i<=g.nvertices; i++)
-		printf(" %d",out[i]);
-	printf("\n");
+        for (i=1; i<=g.nvertices; i++)
+                printf(" %d",out[i]);
+        printf("\n");
 
 }
 

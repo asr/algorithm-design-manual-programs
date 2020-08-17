@@ -1,6 +1,6 @@
 /*    war.c
 
-    Simulation of the children's card game War 
+    Simulation of the children's card game War
 
     Read in cards with format value, suit, e.g. 4h
     ranked by orders 23456789TJQKA and cdhs
@@ -11,7 +11,7 @@
 
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -139,22 +139,22 @@ void war(queue *a, queue *b) {
     init_queue(&c);
 
     while ((!empty_queue(a)) && (!empty_queue(b) && (steps < MAXSTEPS))) {
-	    steps = steps + 1;
-	    x = dequeue(a);
-	    y = dequeue(b);
-	    enqueue(&c, x);
-	    enqueue(&c, y);
-	    if (inwar) {
-	        inwar = FALSE;
-	    } else {
-	        if (value(x) > value(y)) {
-	            clear_queue(&c,a);
-	        } else if  (value(x) < value(y)) {
-	            clear_queue(&c,b);
-	        } else if (value(y) == value(x)) {
-	            inwar = TRUE;
-	        }
-	    }
+            steps = steps + 1;
+            x = dequeue(a);
+            y = dequeue(b);
+            enqueue(&c, x);
+            enqueue(&c, y);
+            if (inwar) {
+                inwar = FALSE;
+            } else {
+                if (value(x) > value(y)) {
+                    clear_queue(&c,a);
+                } else if  (value(x) < value(y)) {
+                    clear_queue(&c,b);
+                } else if (value(y) == value(x)) {
+                    inwar = TRUE;
+                }
+            }
     }
 
     if (!empty_queue(a) && empty_queue(b)) {

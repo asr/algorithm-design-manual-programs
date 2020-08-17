@@ -7,7 +7,7 @@
 
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -87,7 +87,7 @@ void delete_edge(graph *g, int x, int y, bool directed) {
     p = g->edges[x];
     p_back = NULL;
 
-    while (p != NULL) 
+    while (p != NULL)
         if (p->y == y) {
             g->degree[x]--;
             if (p_back != NULL) {

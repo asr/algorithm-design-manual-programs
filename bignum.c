@@ -1,13 +1,13 @@
-/*	bignum.c
-	Implementation of large integer arithmetic: addition, subtraction,
-		multiplication, and division.
+/*      bignum.c
+        Implementation of large integer arithmetic: addition, subtraction,
+                multiplication, and division.
 
-	begun: February 7, 2002
-	by: Steven Skiena
+        begun: February 7, 2002
+        by: Steven Skiena
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -28,13 +28,13 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 #include <stdio.h>
 #include <stdlib.h>
 
-#define	MAXDIGITS   100     /* maximum length bignum */ 
+#define MAXDIGITS   100     /* maximum length bignum */
 #define PLUS        1       /* positive sign bit */
 #define MINUS       -1      /* negative sign bit */
 
 typedef struct {
     char digits[MAXDIGITS]; /* represent the number */
-    int signbit;            /* 1 if positive, -1 if negative */ 
+    int signbit;            /* 1 if positive, -1 if negative */
     int lastdigit;          /* index of high-order digit */
 } bignum;
 
@@ -60,7 +60,7 @@ void zero_justify(bignum *n) {
     }
 
     if ((n->lastdigit == 0) && (n->digits[0] == 0)) {
-        n->signbit = PLUS;	/* hack to avoid -0 */
+        n->signbit = PLUS;      /* hack to avoid -0 */
     }
 }
 
@@ -86,7 +86,7 @@ void int_to_bignum(int s, bignum *n) {
         n->lastdigit ++;
         n->digits[n->lastdigit] = (t % 10);
         t = t / 10;
-	}
+        }
 
     if (s == 0) {
         n->lastdigit = 0;
@@ -130,7 +130,7 @@ int compare_bignum(bignum *a, bignum *b) {
         if (b->digits[i] > a->digits[i]) {
             return(PLUS * a->signbit);
         }
-	}
+        }
 
     return(0);
 }
@@ -173,7 +173,7 @@ void subtract_bignum(bignum *a, bignum *b, bignum *c) {
     zero_justify(c);
 }
 
-/*	c = a +- b;	*/
+/*      c = a +- b;     */
 
 void add_bignum(bignum *a, bignum *b, bignum *c) {
     int carry;          /* carry digit */

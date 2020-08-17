@@ -8,7 +8,7 @@
 
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -151,7 +151,7 @@ void next_square(int *x, int *y, boardtype* board) {
 
     bestcnt = DIMENSION + 1;
     doomed = FALSE;
-    
+
     *x = *y = -1;
 
     for (i = 0; i < DIMENSION; i++) {
@@ -167,7 +167,7 @@ void next_square(int *x, int *y, boardtype* board) {
                     *y = j;
                 }
             }
-            if (fast == FALSE) {  
+            if (fast == FALSE) {
                 if ((newcnt >= 1) && (board->m[i][j] == 0)) {
                     *x = i;
                     *y = j;

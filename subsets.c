@@ -8,7 +8,7 @@
 
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -37,7 +37,7 @@ bool finished = FALSE;
 /* [[[ process_solution_cut */
 void process_solution(int a[], int k, int input) {
     int i;    /* counter */
-    
+
     printf("{");
     for (i = 1; i <= k; i++) {
         if (a[i] == TRUE) {

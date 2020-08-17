@@ -1,14 +1,14 @@
 
-/*	floyd.c
+/*      floyd.c
 
-	Compute all-pairs shortest paths in weighted graphs.
+        Compute all-pairs shortest paths in weighted graphs.
 
-	by: Steven Skiena
-	begun: March 26, 2002
+        by: Steven Skiena
+        begun: March 26, 2002
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -33,7 +33,7 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 
 /************************************************************/
 
-#define	MAXV        100     /* maximum number of vertices */
+#define MAXV        100     /* maximum number of vertices */
 #define MAXDEGREE   50      /* maximum outdegree of a vertex */
 #define MAXINT      100007
 
@@ -52,7 +52,7 @@ typedef struct {
 
 /* [[[ amatrix_cut */
 typedef struct {
-    int weight[MAXV+1][MAXV+1];    	/* adjacency/weight info */
+    int weight[MAXV+1][MAXV+1];         /* adjacency/weight info */
     int nvertices;                  /* number of vertices in the graph */
 } adjacency_matrix;
 /* ]]] */
@@ -127,8 +127,8 @@ void floyd(adjacency_matrix *g) {
                 if (through_k < g->weight[i][j]) {
                     g->weight[i][j] = through_k;
                 }
-			}
-		}
+                        }
+                }
     }
 }
 /* ]]] */

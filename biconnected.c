@@ -1,13 +1,13 @@
 
-/*	biconnected.c
-	Identify articulation vertices in a graph
+/*      biconnected.c
+        Identify articulation vertices in a graph
 
-	by: Steven Skiena
-	begun: March 27, 2002
+        by: Steven Skiena
+        begun: March 27, 2002
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -55,7 +55,7 @@ void process_vertex_late(int v) {
     int time_v;      /* earliest reachable time for v */
     int time_parent; /* earliest reachable time for parent[v] */
 
-    if (parent[v] < 1) {	/* test if v is the root */
+    if (parent[v] < 1) {        /* test if v is the root */
         if (tree_out_degree[v] > 1) {
             printf("root articulation vertex: %d \n", v);
         }

@@ -1,14 +1,14 @@
 
-/*	matrix.c
+/*      matrix.c
 
-	Multiply two matrices.
+        Multiply two matrices.
 
-	by: Steven Skiena
-	begun: July 28, 2005
+        by: Steven Skiena
+        begun: July 28, 2005
 */
 
 /*
-Copyright 2005 by Steven S. Skiena; all rights reserved. 
+Copyright 2005 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -33,7 +33,7 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 
 /************************************************************/
 
-#define	MAXV        100     /* maximum number of vertices */
+#define MAXV        100     /* maximum number of vertices */
 #define MAXDEGREE   50      /* maximum outdegree of a vertex */
 #define MAXINT      100007
 

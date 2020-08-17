@@ -10,7 +10,7 @@ typedef struct {
 } tsp_instance;
 
 typedef struct {
-   int n;            /* how many elements in permutation? */    
+   int n;            /* how many elements in permutation? */
    int p[NMAX+1];    /* array if indices */
 } tsp_solution;
 

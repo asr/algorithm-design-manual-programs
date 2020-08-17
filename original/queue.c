@@ -1,15 +1,15 @@
 
-/*	queue.c
+/*      queue.c
 
-	Implementation of a FIFO queue abstract data type.
+        Implementation of a FIFO queue abstract data type.
 
-	by: Steven Skiena
-	begun: March 27, 2002
+        by: Steven Skiena
+        begun: March 27, 2002
 */
 
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -42,10 +42,10 @@ init_queue(queue *q)
 enqueue(queue *q, int x)
 {
         if (q->count >= QUEUESIZE)
-		printf("Warning: queue overflow enqueue x=%d\n",x);
+                printf("Warning: queue overflow enqueue x=%d\n",x);
         else {
                 q->last = (q->last+1) % QUEUESIZE;
-                q->q[ q->last ] = x;    
+                q->q[ q->last ] = x;
                 q->count = q->count + 1;
         }
 }
@@ -74,8 +74,8 @@ print_queue(queue *q)
 {
         int i,j;
 
-        i=q->first; 
-        
+        i=q->first;
+
         while (i != q->last) {
                 printf("%c ",q->q[i]);
                 i = (i+1) % QUEUESIZE;
@@ -84,5 +84,4 @@ print_queue(queue *q)
         printf("%2d ",q->q[i]);
         printf("\n");
 }
-
 

@@ -1,13 +1,13 @@
 
-/*	bipartite.c
-	Two color a bipartite graph
+/*      bipartite.c
+        Two color a bipartite graph
 
-	by: Steven Skiena
-	begun: March 27, 2002
+        by: Steven Skiena
+        begun: March 27, 2002
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -62,7 +62,7 @@ int complement(int color) {
     if (color == BLACK) {
         return(WHITE);
     }
-	
+
     return(UNCOLORED);
 }
 /* ]]] */
@@ -82,12 +82,12 @@ void process_edge(int x, int y) {
 void twocolor(graph *g) {
     int i;    /* counter */
 
-    for (i = 1; i <= (g->nvertices); i++) { 
+    for (i = 1; i <= (g->nvertices); i++) {
         color[i] = UNCOLORED;
     }
 
     bipartite = TRUE;
- 
+
     initialize_search(g);
 
     for (i = 1; i <= (g->nvertices); i++) {

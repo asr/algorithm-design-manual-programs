@@ -1,12 +1,12 @@
 /*
-	backtrack.h     
-	A header file for generic backtracking 
+        backtrack.h
+        A header file for generic backtracking
 
-	by: Steven Skiena
+        by: Steven Skiena
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -24,8 +24,8 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 
 */
 
-#define MAXCANDIDATES   100	    /* max possible next extensions */
-#define NMAX            100	    /* maximum solution size */
+#define MAXCANDIDATES   100         /* max possible next extensions */
+#define NMAX            100         /* maximum solution size */
 
 typedef char* data;             /* type to pass data to backtrack */
 

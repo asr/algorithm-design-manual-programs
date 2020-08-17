@@ -3,13 +3,13 @@
     Compute the number of circles in two different disk packings.
     Assuming we have an $w \times l$ box, how many unit disks
     can we pack in there assumming we have w disks on the bottom?
-    
+
     by: Steven Skiena
     begun: April 4, 2002
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -31,7 +31,7 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 #include <math.h>
 
 /*
-    how many triangular-lattice layers of radius r balls fit in height h? 
+    how many triangular-lattice layers of radius r balls fit in height h?
 */
 
 int dense_layers(double w, double h, double r) {
@@ -102,7 +102,7 @@ void geo_to_hex(double xg, double yg, double r, double *xh, double *yh) {
 
 /*  Under the hexagonal coordinate system, the set of hexagons defined
     by coordinates (hx,hy), where $0 <= hx <= xmax$ and $0 <= hx <= ymax$
-    forms a diamond-shaped patch, not a conventional axis-oriented 
+    forms a diamond-shaped patch, not a conventional axis-oriented
     rectangle.  To solve this problem, we define array coordinates
     so that (ax,ay) refers to the position in an axis-oriented
     rectangle with (0,0) as the lower righthand point in the matrix.

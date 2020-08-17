@@ -1,14 +1,14 @@
-/*	convex-hull.c
+/*      convex-hull.c
 
-	Compute convex hulls of points in the plane using the
-	Gries/Graham scan algorithm.
+        Compute convex hulls of points in the plane using the
+        Gries/Graham scan algorithm.
 
-	begun: September 13, 2002
-	by: Steven Skiena
+        begun: September 13, 2002
+        by: Steven Skiena
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -61,7 +61,7 @@ void convex_hull(point in[], int n, polygon *hull) {
     int top;        /* current hull size */
     bool smaller_angle();
 
-    if (n <= 3) { 		/* all points on hull! */
+    if (n <= 3) {               /* all points on hull! */
         for (i = 0; i < n; i++) {
             copy_point(in[i], hull->p[i]);
         }
@@ -77,7 +77,7 @@ void convex_hull(point in[], int n, polygon *hull) {
     copy_point(first_point, hull->p[0]);
     copy_point(in[1], hull->p[1]);
 
-    copy_point(first_point, in[n]);	/* sentinel to avoid special case */
+    copy_point(first_point, in[n]);     /* sentinel to avoid special case */
     top = 1;
     i = 2;
 

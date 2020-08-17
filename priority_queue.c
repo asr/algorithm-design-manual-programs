@@ -9,7 +9,7 @@
 
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -83,7 +83,7 @@ void bubble_down(priority_queue *q, int p) {
     c = pq_young_child(p);
     min_index = p;
 
-    for (i = 0; i <= 1; i++) { 
+    for (i = 0; i <= 1; i++) {
         if ((c + i) <= q->n) {
             if (q->q[min_index] > q->q[c + i]) {
                 min_index = c + i;

@@ -1,13 +1,13 @@
-/*	
-	backtrack.c
-    	A generic backtracking implementation
+/*
+        backtrack.c
+        A generic backtracking implementation
 
-	begun: March 27, 2002
+        begun: March 27, 2002
         by: Steven Skiena
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -45,12 +45,12 @@ backtrack(int a[], int k, data input)
                 construct_candidates(a,k,input,c,&ncandidates);
                 for (i=0; i<ncandidates; i++) {
                         a[k] = c[i];
-			make_move(a,k,input);
+                        make_move(a,k,input);
 
                         backtrack(a,k,input);
-			if (finished) return;	/* terminate early */
+                        if (finished) return;   /* terminate early */
 
-			unmake_move(a,k,input);
+                        unmake_move(a,k,input);
                 }
         }
 }

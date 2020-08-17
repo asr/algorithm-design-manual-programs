@@ -1,12 +1,12 @@
-/*	geotest.c
-	Driver program for geometry routines 
+/*      geotest.c
+        Driver program for geometry routines
 
-	by: Steven Skiena
-	begun: July 23, 2002
+        by: Steven Skiena
+        begun: July 23, 2002
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -49,7 +49,7 @@ int main(void) {
 
         print_line(l1);
         print_line(l2);
-		
+
         printf("slope and line tests\n");
         point_and_slope_to_line(p1, -l1.a, &l3);
         print_line(l3);

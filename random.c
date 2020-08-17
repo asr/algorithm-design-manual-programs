@@ -1,13 +1,13 @@
 /*
-	random.c
+        random.c
 
-	Compute random numbers within given ranges
+        Compute random numbers within given ranges
 
-	by: Steven Skiena
+        by: Steven Skiena
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.

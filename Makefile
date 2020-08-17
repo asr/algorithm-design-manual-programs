@@ -3,7 +3,7 @@
 #	Makefile for all "Programming Challenges" Book Programs
 #
 
-# Copyright 2003 by Steven S. Skiena; all rights reserved. 
+# Copyright 2003 by Steven S. Skiena; all rights reserved.
 #
 # Permission is granted for use in non-commerical applications
 # provided this copyright notice remains intact and unchanged.
@@ -57,9 +57,9 @@ CFLAGS = -ggdb # -O4 -g -DNDEBUG -pg
 LFLAGS = -lm # -g -lm -pg
 
 make:	$(BINARIES)
-	
+
 $(OBJECTS):     $(INCLUDES)
- 
+
 $(OBJECTS):     $(MAKEFILE)
 
 all:	$(BINARIES)
@@ -85,7 +85,7 @@ partition:	partition.c
 fib:		fib.c
 		$(CC) -o $@ fib.c $(LFLAGS)
 
-tsp:		annealing.o random.o tsp.o 
+tsp:		annealing.o random.o tsp.o
 		$(CC) -o $@ annealing.o random.o tsp.o $(LFLAGS)
 
 sudoku:		sudoku.o
@@ -205,18 +205,20 @@ tree-demo:	tree-demo.o
 criterion_test:		criterion_test.o
 		$(CC) -o $@ criterion_test.o $(LFLAGS) -lcriterion
 
-lint:	
+lint:
 	lint -h $(SOURCES)
 
 backup:	$(SOURCES) $(INCLUDES)
 	cp $(SOURCES) backup
 	cp $(INCLUDES) backup
- 
-clean: 	
+
+fix-whitespace :
+	fix-whitespace
+
+clean:
 	rm -f core *.o a.out $(BINARIES)
 	rm -f ./tests/*.o
 
-tar:	
+tar:
 	make clean
 	tar cvf /tmp/bookprograms.tar .
-

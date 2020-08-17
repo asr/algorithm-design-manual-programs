@@ -1,14 +1,14 @@
-/*	elevator.c
+/*      elevator.c
 
-	Elevator stop optimization via dynamic programming.
+        Elevator stop optimization via dynamic programming.
 
-	by: Steven Skiena
-	begun: April 1, 2002
+        by: Steven Skiena
+        begun: April 1, 2002
 */
 
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -28,7 +28,7 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 
 #include <stdio.h>
 
-#define	NFLOORS     25  /* the height of the building in floors */
+#define NFLOORS     25  /* the height of the building in floors */
 #define MAX_RIDERS  50  /* what is the capacity of the elevator? */
 #define MAXINT      100007
 
@@ -40,8 +40,8 @@ int m[NFLOORS+1][MAX_RIDERS];   /* dynamic programming cost table */
 int p[NFLOORS+1][MAX_RIDERS];   /* dynamic programming parent table */
 
 int min(int a, int b) {
-	if (a < b) {
-        return(a); 
+        if (a < b) {
+        return(a);
     }
     return(b);
 }
@@ -59,8 +59,8 @@ int floors_walked(int previous, int current) {
     return(nsteps);
 }
 
-/*	m[i][j] denotes the cost of serving all the riders using j stops,
-	the last of which is at floor i.  Zero is the originating floor.
+/*      m[i][j] denotes the cost of serving all the riders using j stops,
+        the last of which is at floor i.  Zero is the originating floor.
 */
 
 int optimize_floors() {
@@ -73,7 +73,7 @@ int optimize_floors() {
         p[i][0] = -1;
     }
 
-    for (j = 1; j <= nstops; j++) { 
+    for (j = 1; j <= nstops; j++) {
         for (i = 0; i <= NFLOORS; i++) {
             m[i][j] = MAXINT;
             for (k = 0; k <= i; k++) {
@@ -82,13 +82,13 @@ int optimize_floors() {
                 if (cost < m[i][j]) {
                     m[i][j] = cost;
                     p[i][j] = k;
-                }    
+                }
             }
         }
     }
 
     laststop = 0;
-    for (i = 1; i <= NFLOORS; i++) { 
+    for (i = 1; i <= NFLOORS; i++) {
         if (m[i][nstops] < m[laststop][nstops]) {
             laststop = i;
         }

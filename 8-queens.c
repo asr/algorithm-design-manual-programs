@@ -1,13 +1,13 @@
-/*	
-	8-queens.c
-	Solve the eight queens problem using backtracking
+/*
+        8-queens.c
+        Solve the eight queens problem using backtracking
 
-	begun: March 1, 2002
-	by: Steven Skiena
+        begun: March 1, 2002
+        by: Steven Skiena
 */
 
 /*
-Copyright 2003 by Steven S. Skiena; all rights reserved. 
+Copyright 2003 by Steven S. Skiena; all rights reserved.
 
 Permission is granted for use in non-commerical applications
 provided this copyright notice remains intact and unchanged.
@@ -71,7 +71,7 @@ void construct_candidates(int a[], int k, int n, int c[], int *ncandidates) {
             if (abs((k)-j) == abs(i-a[j])) {    /* diagonal threat */
                 legal_move = FALSE;
             }
-			if (i == a[j]) {                    /* column threat */
+                        if (i == a[j]) {                    /* column threat */
                 legal_move = FALSE;
             }
         }
