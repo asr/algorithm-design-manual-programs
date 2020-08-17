@@ -80,7 +80,7 @@ insertion_sort (item_type s[], int n)
       j = i;
       while ((j > 0) && (s[j] < s[j - 1]))
         {
-          swap (&s[j], &s[j - 1]);
+          newswap (s, j, j - 1);
           j = j - 1;
         }
     }
@@ -106,7 +106,7 @@ selection_sort (item_type s[], int n)
               min = j;
             }
         }
-      swap (&s[i], &s[min]);
+      newswap (s, i, min);
     }
 }
 
@@ -126,11 +126,11 @@ partition (item_type s[], int l, int h)
     {
       if (s[i] < s[p])
         {
-          swap (&s[i], &s[firsthigh]);
+          newswap (s, i, firsthigh);
           firsthigh++;
         }
     }
-  swap (&s[p], &s[firsthigh]);
+  newswap (s, p, firsthigh);
 
   return (firsthigh);
 }
