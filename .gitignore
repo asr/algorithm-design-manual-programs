@@ -1,5 +1,6 @@
 *.o
 *.c~
 *.h~
-config.mk
 TAGS
+config.mk
+sorting

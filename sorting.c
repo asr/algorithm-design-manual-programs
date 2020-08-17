@@ -279,6 +279,10 @@ main (void)
     }
   random_permutation (s, NELEM);
 
+  printf ("\n\nRandom array: \n");
+  for (i = 0; i < NELEM; i++)
+    printf ("%d ", s[i]);
+
   insertion_sort (s, NELEM);
 
   printf ("\n\nInsertion sort: \n");
