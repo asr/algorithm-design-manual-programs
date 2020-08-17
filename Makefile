@@ -218,14 +218,18 @@ fix-whitespace :
 indent :
 	indent --gnu-style --no-tabs *.c *.h
 
-clean :
+TAGS :
+	find -name "*.[ch]" -print | etags -
+
+clean:
 	rm -f ./tests/*.o
 	rm -f *.o
 	rm -f *.c~
 	rm -f *.h~
-	rm -f core
-	rm -f a.out
 	rm -f $(BINARIES)
+	rm -f a.out
+	rm -f core
+	rm -f TAGS
 
 tar:
 	make clean
