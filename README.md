@@ -113,8 +113,10 @@ brief description of what they are:
 [these](https://solarianprogrammer.com/2016/10/07/building-gcc-ubuntu-linux/)
 instructions for installing a recent version of GCC on Ubuntu.
 
-* The *tested* C files were compiled using the following `.gitignored`
-  file:
+* You can create the `.gitignored` file `config.mk` for defining your
+  local compilation options. See `Makefile` for details.
+
+* The *tested* C files were compiled using the following options:
 
     ```bash
     $ cat config.mk
