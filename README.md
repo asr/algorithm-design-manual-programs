@@ -123,3 +123,19 @@ instructions for installing a recent version of GCC on Ubuntu.
     CC_AUX     := gcc-10.2.0
     CFLAGS_AUX := -Wall -Wextra -Werror
     ```
+
+* You can change the values defined via the pragma `#define` using the
+  compilation option `-D`. For example, the `NELEM` value is defined
+  in `sorting.c` by
+
+    ```c
+    #define NELEM 100
+    ```
+
+  For running the `sorting` program with `NELEM=20`, you can use the
+  following instructions:
+
+    ```
+    $ gcc -DNELEM=20 -o sorting random.c queue.c priority_queue.c sorting.c
+    $ ./sorting
+    ```

@@ -35,7 +35,10 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 #include "queue.h"
 #include "random.h"
 
+#ifndef NELEM
 #define NELEM        100        /* size of test arrays */
+#endif
+
 #define LESS_THAN    -1
 #define EQUAL_TO     0
 #define GREATER_THAN 1
