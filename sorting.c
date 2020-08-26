@@ -159,7 +159,7 @@ quicksort (item_type s[], int l, int h)
 
 /* [[[ heapsort_cut */
 void
-heapsort_ (item_type s[], int n)
+heapsort (item_type s[], int n)
 {
   int i;                        /* counters */
   priority_queue q;             /* heap for heapsort */
@@ -252,15 +252,15 @@ merge (item_type s[], int low, int middle, int high)
 
 /* [[[ mergesort_cut */
 void
-mergesort_ (item_type s[], int low, int high)
+mergesort (item_type s[], int low, int high)
 {
   int middle;                   /* index of middle element */
 
   if (low < high)
     {
       middle = (low + high) / 2;
-      mergesort_ (s, low, middle);
-      mergesort_ (s, middle + 1, high);
+      mergesort (s, low, middle);
+      mergesort (s, middle + 1, high);
 
       merge (s, low, middle, high);
     }
@@ -268,16 +268,34 @@ mergesort_ (item_type s[], int low, int high)
 
 /* ]]] */
 
+/* Initialise array */
+void
+initialise_array (item_type s[], int n)
+{
+  int i;
+
+  for (i = 0; i < n; i++)
+    s[i] = n - i;
+}
+
+/* Print sorted array */
+void
+print_sorted_array (item_type s[], int n, char *sort_algorithm)
+{
+  int i;
+
+  printf ("\n\n%s:\n", sort_algorithm);
+  for (i = 0; i < n; i++)
+    printf ("%d ", s[i]);
+}
+
 int
 main (void)
 {
   int s[NELEM + 2];
   int i;                        /* counters */
 
-  for (i = 0; i < NELEM; i++)
-    {
-      s[i] = NELEM - i;
-    }
+  initialise_array (s, NELEM);
   random_permutation (s, NELEM);
 
   /* ASR (2020-08-26) We can not print the random array because it
@@ -287,80 +305,41 @@ main (void)
   /*   printf ("%d ", s[i]); */
 
   insertion_sort (s, NELEM);
+  print_sorted_array (s, NELEM, "Insertion sort");
 
-  printf ("\n\nInsertion sort:\n");
-  for (i = 0; i < NELEM; i++)
-    {
-      printf ("%d ", s[i]);
-    }
-
-  for (i = 0; i < NELEM; i++)
-    {
-      s[i] = NELEM - i;
-    }
+  initialise_array (s, NELEM);
   random_permutation (s, NELEM);
 
   selection_sort (s, NELEM);
+  print_sorted_array (s, NELEM, "Selection sort");
 
-  printf ("\n\nSelection sort:\n");
-  for (i = 0; i < NELEM; i++)
-    {
-      printf ("%d ", s[i]);
-    }
-
-  for (i = 0; i < NELEM; i++)
-    {
-      s[i] = NELEM - i;
-    }
+  initialise_array (s, NELEM);
   random_permutation (s, NELEM);
 
   quicksort (s, 0, NELEM - 1);
+  print_sorted_array (s, NELEM, "Quicksort");
 
-  printf ("\n\nQuicksort:\n");
-  for (i = 0; i < NELEM; i++)
-    {
-      printf ("%d ", s[i]);
-    }
-
-  for (i = 0; i < NELEM; i++)
-    {
-      s[i] = NELEM - i;
-    }
+  initialise_array (s, NELEM);
   random_permutation (s, NELEM);
 
-  heapsort_ (s, NELEM);
+  heapsort (s, NELEM);
+  print_sorted_array (s, NELEM, "Heapsort sort");
 
-  printf ("\n\nHeapsort sort:\n");
-  for (i = 0; i < NELEM; i++)
-    {
-      printf ("%d ", s[i]);
-    }
-
-  for (i = 0; i < NELEM; i++)
-    {
-      s[i] = NELEM - i;
-    }
+  initialise_array (s, NELEM);
   random_permutation (s, NELEM);
 
-  mergesort_ (s, 0, NELEM - 1);
-  printf ("\n\nMergesort:\n");
-  for (i = 0; i < NELEM; i++)
-    {
-      printf ("%d ", s[i]);
-    }
-  printf ("\n");
-
-  printf ("\n");
+  mergesort (s, 0, NELEM - 1);
+  print_sorted_array (s, NELEM, "Mergesort");
 
   // /* test binary search */
-  printf ("Binary Search:\n");
+  printf ("\n\nBinary Search:\n");
   for (i = 0; i < NELEM; i++)
     {
       s[i] = 2 * (NELEM - i);
     }
   random_permutation (s, NELEM);
 
-  heapsort_ (s, NELEM);
+  heapsort (s, NELEM);
   for (i = 2; i < 2 * NELEM + 1; i += 2)
     {
       printf ("%d found in %d\n", i, binary_search (s, i, 0, NELEM - 1));
