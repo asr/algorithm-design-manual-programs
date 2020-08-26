@@ -233,6 +233,9 @@ backup:	$(SOURCES) $(INCLUDES)
 	cp $(SOURCES) backup
 	cp $(INCLUDES) backup
 
+test : sorting
+	./test-script.sh
+
 fix-whitespace :
 	fix-whitespace
 

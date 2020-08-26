@@ -280,13 +280,15 @@ main (void)
     }
   random_permutation (s, NELEM);
 
-  printf ("\n\nRandom array: \n");
-  for (i = 0; i < NELEM; i++)
-    printf ("%d ", s[i]);
+  /* ASR (2020-08-26) We can not print the random array because it
+     breaks the test suite. */
+  /* printf ("\n\nRandom array: \n"); */
+  /* for (i = 0; i < NELEM; i++) */
+  /*   printf ("%d ", s[i]); */
 
   insertion_sort (s, NELEM);
 
-  printf ("\n\nInsertion sort: \n");
+  printf ("\n\nInsertion sort:\n");
   for (i = 0; i < NELEM; i++)
     {
       printf ("%d ", s[i]);
@@ -300,7 +302,7 @@ main (void)
 
   selection_sort (s, NELEM);
 
-  printf ("\n\nSelection sort: \n");
+  printf ("\n\nSelection sort:\n");
   for (i = 0; i < NELEM; i++)
     {
       printf ("%d ", s[i]);
@@ -314,7 +316,7 @@ main (void)
 
   quicksort (s, 0, NELEM - 1);
 
-  printf ("\n\nQuicksort: \n");
+  printf ("\n\nQuicksort:\n");
   for (i = 0; i < NELEM; i++)
     {
       printf ("%d ", s[i]);
@@ -328,7 +330,7 @@ main (void)
 
   heapsort_ (s, NELEM);
 
-  printf ("\n\nHeapsort sort: \n");
+  printf ("\n\nHeapsort sort:\n");
   for (i = 0; i < NELEM; i++)
     {
       printf ("%d ", s[i]);
@@ -341,7 +343,7 @@ main (void)
   random_permutation (s, NELEM);
 
   mergesort_ (s, 0, NELEM - 1);
-  printf ("\n\nMergesort: \n");
+  printf ("\n\nMergesort:\n");
   for (i = 0; i < NELEM; i++)
     {
       printf ("%d ", s[i]);
@@ -351,7 +353,7 @@ main (void)
   printf ("\n");
 
   // /* test binary search */
-  printf ("Binary Search: \n");
+  printf ("Binary Search:\n");
   for (i = 0; i < NELEM; i++)
     {
       s[i] = 2 * (NELEM - i);
