@@ -32,7 +32,7 @@ SOURCES = backtrack.c 8-queens.c permutations.c subsets.c queue.c war.c \
 	tsp.c fib.c partition.c  biconnected.c stack.c strong.c topsort1.c \
 	bipartite.c priority_queue.c kruskal.c set_union.c list-demo.c \
 	tree-demo.c matrix.c criterion_test.c \
-        utils.c graph-test sorting-test.c
+        utils.c graph-test.c sorting-test.c
 
 OBJECTS = backtrack.o 8-queens.o permutations.o subsets.o queue.o war.o \
 	graph.o random.o sorting.o bfs-dfs.o bfs-demo.o dfs-demo.o \
@@ -52,7 +52,7 @@ BINARIES = 8-queens permutations subsets war bfs-demo \
 	polly gcd substringedit primes bignum elevator order plates geotest cgtest \
 	netflow lcs paths sudoku tsp fib partition biconnected strong topsort \
 	bipartite kruskal matrix tree-demo criterion_test topsort1 list-demo \
-        graph_test sorting-test
+        graph-test sorting-test
 
 INCLUDES = bool.h backtrack.h queue.h graph.h editdistance.h sorting.h \
 	   geometry.h annealing.h tsp.h stack.h priority_queue.h set_union.h \
