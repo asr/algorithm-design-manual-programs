@@ -1,4 +1,8 @@
 
+/* graph-test.c
+   Testing graph library.
+*/
+
 #include <error.h>
 #include <stdlib.h>
 
