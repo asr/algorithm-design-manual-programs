@@ -87,12 +87,12 @@ insert_edge (graph * g, int x, int y, bool directed)
 
 /* [[[ fread_graph_cut */
 void
-fread_graph (char *filename, graph *g, bool directed)
+fread_graph (char *filename, graph * g, bool directed)
 {
-  int i;     /* Counter */
-  int m;     /* Number of edges */
-  int x, y;  /* Vertices in edge (x,y) */
-  FILE *fp;  /* Temporary file pointer */
+  int i;                        /* Counter */
+  int m;                        /* Number of edges */
+  int x, y;                     /* Vertices in edge (x,y) */
+  FILE *fp;                     /* Temporary file pointer */
 
   initialize_graph (g, directed);
 
@@ -104,7 +104,7 @@ fread_graph (char *filename, graph *g, bool directed)
   if (fscanf (fp, "%d %d", &(g->nvertices), &m) == 0)
     die ("Error reading the number of vertices or the number of edges");
 
-  if ( m > MAXV )
+  if (m > MAXV)
     die ("The graph has too many vertices: %d (maximun allowed is %d)",
          m, MAXV);
 
@@ -118,7 +118,7 @@ fread_graph (char *filename, graph *g, bool directed)
 }
 
 void
-read_graph (graph *g, bool directed)
+read_graph (graph * g, bool directed)
 {
   fread_graph (NULL, g, directed);
 }
