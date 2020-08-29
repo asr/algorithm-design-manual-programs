@@ -31,7 +31,7 @@ SOURCES = backtrack.c 8-queens.c permutations.c subsets.c queue.c war.c \
 	plates.c geotest.c cgtest.c netflow.c paths.c sudoku.c annealing.c \
 	tsp.c fib.c partition.c  biconnected.c stack.c strong.c topsort1.c \
 	bipartite.c priority_queue.c kruskal.c set_union.c list-demo.c \
-	tree-demo.c matrix.c criterion_test.c utils.c
+	tree-demo.c matrix.c criterion_test.c utils.c sorting-test.c
 
 OBJECTS = backtrack.o 8-queens.o permutations.o subsets.o queue.o war.o \
 	graph.o random.o sorting.o bfs-dfs.o bfs-demo.o dfs-demo.o \
@@ -42,17 +42,17 @@ OBJECTS = backtrack.o 8-queens.o permutations.o subsets.o queue.o war.o \
 	plates.o geotest.o cgtest.o netflow.o paths.o sudoku.o annealing.o \
 	tsp.o fib.o partition.o biconnected.o stack.o strong.o topsort1.o \
 	bipartite.o priority_queue.o kruskal.o set_union.o list-demo.o \
-	tree-demo.o matrix.o criterion_test.o utils.o
+	tree-demo.o matrix.o criterion_test.o utils.o sorting-test.o
 
-BINARIES = 8-queens permutations subsets war sorting bfs-demo \
+BINARIES = 8-queens permutations subsets war bfs-demo \
 	dfs-demo connected topsort prim dijkstra floyd findcycle stringedit \
 	superman editbrute convex-hull triangulate 10055 distance name \
 	polly gcd substringedit primes bignum elevator order plates geotest cgtest \
 	netflow lcs paths sudoku tsp fib partition biconnected strong topsort \
 	bipartite kruskal matrix tree-demo criterion_test topsort1 list-demo \
-        graph_test
+        graph_test sorting-test
 
-INCLUDES = bool.h backtrack.h queue.h graph.h editdistance.h \
+INCLUDES = bool.h backtrack.h queue.h graph.h editdistance.h sorting.h \
 	   geometry.h annealing.h tsp.h stack.h priority_queue.h set_union.h \
 	   list.h tree.h item.h random.h bfs-dfs.h editbrute.h utils.h
 
@@ -128,9 +128,6 @@ permutations:	permutations.o
 
 subsets:	subsets.o
 		$(CC) -o $@ subsets.o $(LFLAGS)
-
-sorting:	random.o queue.o priority_queue.o sorting.o
-		$(CC) -o $@ random.o queue.o priority_queue.o sorting.o $(LFLAGS)
 
 war:		queue.o random.o war.o
 		$(CC) -o $@ queue.o random.o war.o $(LFLAGS)
@@ -234,6 +231,10 @@ criterion_test:		criterion_test.o
 graph-test : graph.o utils.o graph-test.o
 	$(CC) -o $@ $^
 
+sorting-test:	queue.o priority_queue.o random.o sorting.o sorting-test.o
+		$(CC) -o $@ $^
+
+
 lint:
 	lint -h $(SOURCES)
 
@@ -241,7 +242,7 @@ backup:	$(SOURCES) $(INCLUDES)
 	cp $(SOURCES) backup
 	cp $(INCLUDES) backup
 
-test : graph-test sorting
+test : graph-test sorting-test
 	./test-script.sh
 
 fix-whitespace :

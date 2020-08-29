@@ -4,7 +4,7 @@
 # ./distance | diff - datafiles/distance-out
 # ./war < datafiles/war-in | diff - datafiles/war-out
 # ./name < datafiles/name-in | diff - datafiles/name-out
-./sorting | diff - datafiles/sorting-out
+./sorting-test | diff - datafiles/sorting-test.out
 # ./polly < datafiles/polly-in | diff - datafiles/polly-out
 # ./bignum < datafiles/bignum-in | diff - datafiles/bignum-out
 # ./gcd < datafiles/gcd-in | diff - datafiles/gcd-out
