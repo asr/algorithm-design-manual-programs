@@ -235,7 +235,6 @@ main (void)
 {
   tsp_instance t;               /* tsp points */
   tsp_solution s;               /* tsp solution */
-  int i;                        /* counter */
   double solution_cost ();
 
   read_tsp (&t);
