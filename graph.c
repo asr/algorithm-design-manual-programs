@@ -108,7 +108,6 @@ read_graph (graph * g, bool directed)
 void
 delete_edge (graph * g, int x, int y, bool directed)
 {
-  int i;                        /* counter */
   edgenode *p, *p_back;         /* temporary pointers */
 
   p = g->edges[x];
