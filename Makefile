@@ -31,7 +31,8 @@ SOURCES = backtrack.c 8-queens.c permutations.c subsets.c queue.c war.c \
 	plates.c geotest.c cgtest.c netflow.c paths.c sudoku.c annealing.c \
 	tsp.c fib.c partition.c  biconnected.c stack.c strong.c topsort1.c \
 	bipartite.c priority_queue.c kruskal.c set_union.c list-demo.c \
-	tree-demo.c matrix.c criterion_test.c utils.c sorting-test.c
+	tree-demo.c matrix.c criterion_test.c \
+        utils.c graph-test sorting-test.c
 
 OBJECTS = backtrack.o 8-queens.o permutations.o subsets.o queue.o war.o \
 	graph.o random.o sorting.o bfs-dfs.o bfs-demo.o dfs-demo.o \
@@ -42,7 +43,8 @@ OBJECTS = backtrack.o 8-queens.o permutations.o subsets.o queue.o war.o \
 	plates.o geotest.o cgtest.o netflow.o paths.o sudoku.o annealing.o \
 	tsp.o fib.o partition.o biconnected.o stack.o strong.o topsort1.o \
 	bipartite.o priority_queue.o kruskal.o set_union.o list-demo.o \
-	tree-demo.o matrix.o criterion_test.o utils.o sorting-test.o
+	tree-demo.o matrix.o criterion_test.o \
+        utils.o graph-test.o sorting-test.o
 
 BINARIES = 8-queens permutations subsets war bfs-demo \
 	dfs-demo connected topsort prim dijkstra floyd findcycle stringedit \
