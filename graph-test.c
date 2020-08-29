@@ -18,4 +18,9 @@ main (void)
   /* Reading an undirected graph. */
   fread_graph ("datafiles/g-k4", &g, FALSE);
   print_graph (&g);
+  printf("\n");
+
+  /* Reading an directed graph. */
+  fread_graph ("datafiles/g1", &g, TRUE);
+  print_graph (&g);
 }

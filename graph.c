@@ -168,7 +168,7 @@ print_graph (graph * g)
 
   for (i = 1; i <= g->nvertices; i++)
     {
-      printf ("%d: ", i);
+      printf ("%d:", i);
       p = g->edges[i];
       while (p != _NULL)
         {
