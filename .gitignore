@@ -3,4 +3,5 @@
 *.h~
 TAGS
 config.mk
+graph-test
 sorting

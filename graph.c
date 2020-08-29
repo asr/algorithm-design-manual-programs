@@ -30,8 +30,9 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "queue.h"
 #include "graph.h"
+#include "queue.h"
+#include "utils.h"
 
 /* [[[ init_graph_c */
 void
@@ -84,21 +85,34 @@ insert_edge (graph * g, int x, int y, bool directed)
 
 /* ]]] */
 
-/* [[[ read_graph_cut */
+/* [[[ fread_graph_cut */
 void
-read_graph (graph * g, bool directed)
+fread_graph (char *filename, graph *g, bool directed)
 {
-  int i;                        /* counter */
-  int m;                        /* number of edges */
-  int x, y;                     /* vertices in edge (x,y) */
+  int i;     /* Counter */
+  int m;     /* Number of edges */
+  int x, y;  /* Vertices in edge (x,y) */
+  FILE *fp;  /* Temporary file pointer */
 
   initialize_graph (g, directed);
 
-  scanf ("%d %d", &(g->nvertices), &m);
+  if (filename == NULL)
+    fp = stdin;
+  else
+    fp = xfopen (filename, "r");
+
+  if (fscanf (fp, "%d %d", &(g->nvertices), &m) == 0)
+    die ("Error reading the number of vertices or the number of edges");
+
+  if ( m > MAXV )
+    die ("The graph has too many vertices: %d (maximun allowed is %d)",
+         m, MAXV);
 
   for (i = 1; i <= m; i++)
     {
-      scanf ("%d %d", &x, &y);
+      if (fscanf (fp, "%d %d", &x, &y) == 0)
+        die ("Error reading an edge");
+
       insert_edge (g, x, y, directed);
     }
 }

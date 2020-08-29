@@ -88,3 +88,4 @@
 # ./list-demo < datafiles/list-in | diff - datafiles/list-out
 # ./tree-demo < datafiles/list-in | diff - datafiles/treelist-out
 # ./tree-demo < datafiles/t1.in | diff - datafiles/t1.out
+./graph-test | diff - datafiles/graph-test.out
