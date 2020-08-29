@@ -65,3 +65,4 @@ void process_edge (int x, int y);
 void initialize_graph (graph * g, bool directed);
 void fread_graph (char *filename, graph *g, bool directed);
 void print_graph (graph * g);
+void read_graph (graph *g, bool directed);

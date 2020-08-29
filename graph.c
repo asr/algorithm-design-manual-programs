@@ -117,6 +117,12 @@ fread_graph (char *filename, graph *g, bool directed)
     }
 }
 
+void
+read_graph (graph *g, bool directed)
+{
+  fread_graph (NULL, g, directed);
+}
+
 /* ]]] */
 
 void
