@@ -73,9 +73,9 @@ insert_edge (graph * g, int x, int y, bool directed)
 
   g->degree[x]++;
 
-  if (directed == FALSE)
+  if (directed == false)
     {
-      insert_edge (g, y, x, TRUE);
+      insert_edge (g, y, x, true);
     }
   else
     {
@@ -147,9 +147,9 @@ delete_edge (graph * g, int x, int y, bool directed)
               g->edges[x] = p->next;
             }
           free (p);
-          if (directed == FALSE)
+          if (directed == false)
             {
-              delete_edge (g, y, x, TRUE);
+              delete_edge (g, y, x, true);
             }
           else
             {

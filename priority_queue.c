@@ -27,9 +27,9 @@ http://www.amazon.com/exec/obidos/ASIN/0387001638/thealgorithmrepo/
 
 */
 
+#include <stdbool.h>
 #include <stdio.h>
 
-#include "bool.h"
 #include "priority_queue.h"
 
 /* [[[ pq_init_cut */
@@ -168,9 +168,9 @@ empty_pq (priority_queue * q)
 {
   if (q->n <= 0)
     {
-      return (TRUE);
+      return true;
     }
-  return (FALSE);
+  return false;
 }
 
 void
