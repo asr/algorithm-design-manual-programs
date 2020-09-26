@@ -227,14 +227,14 @@ list-demo:	list-demo.o
 tree-demo:	tree-demo.o
 		$(CC) -o $@ tree-demo.o $(LFLAGS)
 
-criterion_test:		criterion_test.o
+criterion_test: criterion_test.o
 		$(CC) -o $@ criterion_test.o $(LFLAGS) -lcriterion
 
 graph-test : graph.o utils.o graph-test.o
 	$(CC) -o $@ $^
 
-sorting-test:	queue.o priority_queue.o random.o sorting.o sorting-test.o
-		$(CC) -o $@ $^
+sorting-test: queue.o priority_queue.o random.o sorting.o sorting-test.o
+	$(CC) -o $@ $^
 
 
 lint:
