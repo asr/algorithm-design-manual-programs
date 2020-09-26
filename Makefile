@@ -244,7 +244,7 @@ backup:	$(SOURCES) $(INCLUDES)
 	cp $(SOURCES) backup
 	cp $(INCLUDES) backup
 
-test : graph-test sorting-test
+test : graph-test matrix sorting-test
 	./test-script.sh
 
 fix-whitespace :

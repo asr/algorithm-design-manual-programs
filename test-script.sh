@@ -83,8 +83,8 @@
 # ./bipartite < datafiles/tree | diff - datafiles/bipartite-tree
 # ./bipartite < datafiles/art3 | diff - datafiles/bipartite-art3
 # ./topsort1 < datafiles/grid | diff - datafiles/grid-topsort1-out
-# ./matrix < datafiles/matrix-data1 | diff - datafiles/matrix-data1-out
-# ./matrix < datafiles/matrix-data2 | diff - datafiles/matrix-data2-out
+./matrix < datafiles/matrix-data1 | diff - datafiles/matrix-data1-out
+./matrix < datafiles/matrix-data2 | diff - datafiles/matrix-data2-out
 # ./list-demo < datafiles/list-in | diff - datafiles/list-out
 # ./tree-demo < datafiles/list-in | diff - datafiles/treelist-out
 # ./tree-demo < datafiles/t1.in | diff - datafiles/t1.out
